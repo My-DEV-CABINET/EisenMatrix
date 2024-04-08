@@ -12,19 +12,10 @@
 		4ED7D98F2BC3F0950015ED95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */; };
 		4ED7D9922BC3F0950015ED95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */; };
 		4ED7D99C2BC3F0950015ED95 /* EisenMatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D99B2BC3F0950015ED95 /* EisenMatrixTests.swift */; };
-		4ED7D9A62BC3F0950015ED95 /* EisenMatrixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */; };
-		4ED7D9A82BC3F0950015ED95 /* EisenMatrixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D9A72BC3F0950015ED95 /* EisenMatrixUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		4ED7D9982BC3F0950015ED95 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4ED7D9862BC3F0940015ED95;
-			remoteInfo = EisenMatrix;
-		};
-		4ED7D9A22BC3F0950015ED95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
 			proxyType = 1;
@@ -41,9 +32,7 @@
 		4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EisenMatrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D99B2BC3F0950015ED95 /* EisenMatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixTests.swift; sourceTree = "<group>"; };
-		4ED7D9A12BC3F0950015ED95 /* EisenMatrixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EisenMatrixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixUITests.swift; sourceTree = "<group>"; };
-		4ED7D9A72BC3F0950015ED95 /* EisenMatrixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +44,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4ED7D9942BC3F0950015ED95 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4ED7D99E2BC3F0950015ED95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +68,6 @@
 			children = (
 				4ED7D9872BC3F0940015ED95 /* EisenMatrix.app */,
 				4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */,
-				4ED7D9A12BC3F0950015ED95 /* EisenMatrixUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */,
-				4ED7D9A72BC3F0950015ED95 /* EisenMatrixUITestsLaunchTests.swift */,
 			);
 			path = EisenMatrixUITests;
 			sourceTree = "<group>";
@@ -165,24 +145,6 @@
 			productReference = 4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4ED7D9A02BC3F0950015ED95 /* EisenMatrixUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4ED7D9B12BC3F0950015ED95 /* Build configuration list for PBXNativeTarget "EisenMatrixUITests" */;
-			buildPhases = (
-				4ED7D99D2BC3F0950015ED95 /* Sources */,
-				4ED7D99E2BC3F0950015ED95 /* Frameworks */,
-				4ED7D99F2BC3F0950015ED95 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4ED7D9A32BC3F0950015ED95 /* PBXTargetDependency */,
-			);
-			name = EisenMatrixUITests;
-			productName = EisenMatrixUITests;
-			productReference = 4ED7D9A12BC3F0950015ED95 /* EisenMatrixUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +159,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					4ED7D9962BC3F0950015ED95 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 4ED7D9862BC3F0940015ED95;
-					};
-					4ED7D9A02BC3F0950015ED95 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 4ED7D9862BC3F0940015ED95;
 					};
@@ -221,7 +179,6 @@
 			targets = (
 				4ED7D9862BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D9962BC3F0950015ED95 /* EisenMatrixTests */,
-				4ED7D9A02BC3F0950015ED95 /* EisenMatrixUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +194,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4ED7D9952BC3F0950015ED95 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4ED7D99F2BC3F0950015ED95 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,15 +220,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4ED7D99D2BC3F0950015ED95 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4ED7D9A82BC3F0950015ED95 /* EisenMatrixUITestsLaunchTests.swift in Sources */,
-				4ED7D9A62BC3F0950015ED95 /* EisenMatrixUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +227,6 @@
 			isa = PBXTargetDependency;
 			target = 4ED7D9862BC3F0940015ED95 /* EisenMatrix */;
 			targetProxy = 4ED7D9982BC3F0950015ED95 /* PBXContainerItemProxy */;
-		};
-		4ED7D9A32BC3F0950015ED95 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4ED7D9862BC3F0940015ED95 /* EisenMatrix */;
-			targetProxy = 4ED7D9A22BC3F0950015ED95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -430,6 +366,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +374,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,6 +400,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +408,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,10 +427,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4MN45GZSDT;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrixTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,50 +451,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4MN45GZSDT;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrixTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EisenMatrix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EisenMatrix";
-			};
-			name = Release;
-		};
-		4ED7D9B22BC3F0950015ED95 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4MN45GZSDT;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrixUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EisenMatrix;
-			};
-			name = Debug;
-		};
-		4ED7D9B32BC3F0950015ED95 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4MN45GZSDT;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrixUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EisenMatrix;
 			};
 			name = Release;
 		};
@@ -574,15 +492,6 @@
 			buildConfigurations = (
 				4ED7D9AF2BC3F0950015ED95 /* Debug */,
 				4ED7D9B02BC3F0950015ED95 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4ED7D9B12BC3F0950015ED95 /* Build configuration list for PBXNativeTarget "EisenMatrixUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4ED7D9B22BC3F0950015ED95 /* Debug */,
-				4ED7D9B32BC3F0950015ED95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
