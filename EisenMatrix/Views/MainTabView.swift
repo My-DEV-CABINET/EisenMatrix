@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            TaskView()
+            HomeView()
                 .tabItem {
                     Image(systemName: "checklist")
                 }

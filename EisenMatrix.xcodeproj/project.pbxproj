@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF662BD135AD00748AEC /* MainTabView.swift */; };
-		4ECFEF692BD1373F00748AEC /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* TaskView.swift */; };
+		4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* HomeView.swift */; };
 		4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6A2BD1374600748AEC /* ChartView.swift */; };
 		4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6C2BD1374A00748AEC /* SettingView.swift */; };
 		4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */; };
+		4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF712BD15CB500748AEC /* Matrix.swift */; };
+		4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF742BD15FF700748AEC /* View+Extensions.swift */; };
+		4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */; };
+		4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF782BD160F600748AEC /* OffsetKey.swift */; };
+		4ECFEF7D2BD1615600748AEC /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */; };
+		4ECFEF832BD165B200748AEC /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF822BD165B200748AEC /* TasksView.swift */; };
+		4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF842BD165D200748AEC /* TaskRowView.swift */; };
+		4ECFEF892BD16E3300748AEC /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF882BD16E3300748AEC /* TaskModel.swift */; };
+		4ECFEF8B2BD16E4A00748AEC /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8A2BD16E4A00748AEC /* TasksModel.swift */; };
+		4ECFEF8D2BD16E5B00748AEC /* TasksIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8C2BD16E5B00748AEC /* TasksIntent.swift */; };
 		4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */; };
 		4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98C2BC3F0940015ED95 /* ContentView.swift */; };
 		4ED7D98F2BC3F0950015ED95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */; };
@@ -31,10 +41,20 @@
 
 /* Begin PBXFileReference section */
 		4ECFEF662BD135AD00748AEC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		4ECFEF682BD1373F00748AEC /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		4ECFEF682BD1373F00748AEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4ECFEF6A2BD1374600748AEC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		4ECFEF6C2BD1374A00748AEC /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContainer.swift; sourceTree = "<group>"; };
+		4ECFEF712BD15CB500748AEC /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		4ECFEF742BD15FF700748AEC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		4ECFEF782BD160F600748AEC /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
+		4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		4ECFEF822BD165B200748AEC /* TasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		4ECFEF842BD165D200748AEC /* TaskRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		4ECFEF882BD16E3300748AEC /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		4ECFEF8A2BD16E4A00748AEC /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
+		4ECFEF8C2BD16E5B00748AEC /* TasksIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksIntent.swift; sourceTree = "<group>"; };
 		4ED7D9872BC3F0940015ED95 /* EisenMatrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EisenMatrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixApp.swift; sourceTree = "<group>"; };
 		4ED7D98C2BC3F0940015ED95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,7 +62,6 @@
 		4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EisenMatrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D99B2BC3F0950015ED95 /* EisenMatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixTests.swift; sourceTree = "<group>"; };
-		4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +86,51 @@
 			isa = PBXGroup;
 			children = (
 				4ECFEF662BD135AD00748AEC /* MainTabView.swift */,
-				4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */,
-				4ECFEF682BD1373F00748AEC /* TaskView.swift */,
+				4ECFEF862BD16DFF00748AEC /* Task */,
 				4ECFEF6A2BD1374600748AEC /* ChartView.swift */,
 				4ECFEF6C2BD1374A00748AEC /* SettingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4ECFEF732BD15FE000748AEC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF742BD15FF700748AEC /* View+Extensions.swift */,
+				4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */,
+				4ECFEF782BD160F600748AEC /* OffsetKey.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4ECFEF862BD16DFF00748AEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF682BD1373F00748AEC /* HomeView.swift */,
+				4ECFEF822BD165B200748AEC /* TasksView.swift */,
+				4ECFEF842BD165D200748AEC /* TaskRowView.swift */,
+				4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		4ECFEF872BD16E1500748AEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
+				4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */,
+				4ECFEF882BD16E3300748AEC /* TaskModel.swift */,
+				4ECFEF8A2BD16E4A00748AEC /* TasksModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ECFEF8E2BD16E8A00748AEC /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF8C2BD16E5B00748AEC /* TasksIntent.swift */,
+			);
+			path = Intent;
 			sourceTree = "<group>";
 		};
 		4ED7D97E2BC3F0940015ED95 = {
@@ -80,7 +138,6 @@
 			children = (
 				4ED7D9892BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D99A2BC3F0950015ED95 /* EisenMatrixTests */,
-				4ED7D9A42BC3F0950015ED95 /* EisenMatrixUITests */,
 				4ED7D9882BC3F0940015ED95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +156,9 @@
 			children = (
 				4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */,
 				4ED7D98C2BC3F0940015ED95 /* ContentView.swift */,
+				4ECFEF732BD15FE000748AEC /* Helpers */,
+				4ECFEF8E2BD16E8A00748AEC /* Intent */,
+				4ECFEF872BD16E1500748AEC /* Model */,
 				4ECFEF6E2BD1375200748AEC /* Views */,
 				4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */,
 				4ED7D9902BC3F0950015ED95 /* Preview Content */,
@@ -120,14 +180,6 @@
 				4ED7D99B2BC3F0950015ED95 /* EisenMatrixTests.swift */,
 			);
 			path = EisenMatrixTests;
-			sourceTree = "<group>";
-		};
-		4ED7D9A42BC3F0950015ED95 /* EisenMatrixUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */,
-			);
-			path = EisenMatrixUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +283,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */,
+				4ECFEF832BD165B200748AEC /* TasksView.swift in Sources */,
+				4ECFEF8B2BD16E4A00748AEC /* TasksModel.swift in Sources */,
+				4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */,
 				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
+				4ECFEF8D2BD16E5B00748AEC /* TasksIntent.swift in Sources */,
 				4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */,
 				4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */,
+				4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */,
+				4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */,
 				4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */,
+				4ECFEF7D2BD1615600748AEC /* NewTaskView.swift in Sources */,
+				4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */,
 				4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */,
-				4ECFEF692BD1373F00748AEC /* TaskView.swift in Sources */,
+				4ECFEF892BD16E3300748AEC /* TaskModel.swift in Sources */,
+				4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */,
+				4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +456,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,7 +490,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
