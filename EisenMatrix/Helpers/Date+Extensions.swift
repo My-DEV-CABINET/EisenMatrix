@@ -78,4 +78,12 @@ extension Date {
         let calendar = Calendar.current
         return calendar.date(byAdding: .hour, value: value, to: .init()) ?? .init()
     }
+    
+    static func currentKoreanDate() -> Date {
+        let today = Date()
+        let timezone = TimeZone.autoupdatingCurrent
+        let secondsFromGMT = timezone.secondsFromGMT(for: today)
+        let localizedDate = today.addingTimeInterval(TimeInterval(secondsFromGMT))
+        return localizedDate
+    }
 }

@@ -28,7 +28,7 @@ struct HeaderView: View {
 
             TabView(selection: $dateContainer.model.currentWeekIndex) {
                 ForEach(dateContainer.model.weekSlider.indices, id: \.self) { index in
-                    WeekView(week: dateContainer.model.weekSlider[index])
+                    WeekView(week: $dateContainer.model.weekSlider[index])
                         .padding(.horizontal, 15)
                         .tag(index)
                 }
@@ -65,7 +65,6 @@ struct HeaderView: View {
                 if let lastDate = currentWeek.last?.date {
                     dateContainer.model.weekSlider.append(lastDate.createNextWeek())
                 }
-                print("#### \($dateContainer.model.weekSlider[0])")
             }
         })
     }

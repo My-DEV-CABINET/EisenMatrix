@@ -11,9 +11,10 @@ struct NewTaskView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
  
     @State private var taskTitle: String = ""
-    @State private var taskDate: Date = .init()
+    @State private var taskDate: Date = .currentKoreanDate()
     @State private var taskColor: Color = Matrix.Do.color
     
     var body: some View {
@@ -86,7 +87,7 @@ struct NewTaskView: View {
             Button(action: {
                 let type = Matrix.allCases.filter { $0.color == taskColor }.first?.info
                 let task = Task(taskTitle: taskTitle, taskType: type ?? Matrix.Do.info, startDate: taskDate)
-                taskContainer.intent.addTask(task: task, context: context)
+                taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
                 dismiss()
             }, label: {
                 Text("Create Task")

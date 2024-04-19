@@ -10,6 +10,8 @@ import SwiftUI
 struct TaskRowView: View {
     @Environment(\.modelContext) private var context
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+
     @Binding var task: Task
 
     var body: some View {
@@ -48,7 +50,7 @@ struct TaskRowView: View {
             .contextMenu {
                 Button(role: .destructive) {
                     /// Deleting Task
-                    taskContainer.intent.deleteTask(task: task, context: context)
+                    taskContainer.intent.deleteTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
 
                 } label: {
                     Text("Delete Task")

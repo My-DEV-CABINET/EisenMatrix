@@ -18,7 +18,6 @@ final class DateContainer<Intent, Model>: ObservableObject {
         self.intent = intent
         self.model = model
 
-        // 3
         modelChangePublisher
             .receive(on: RunLoop.main)
             .sink(receiveValue: objectWillChange.send)

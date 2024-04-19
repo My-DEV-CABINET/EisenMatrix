@@ -9,14 +9,13 @@ import SwiftUI
 
 struct WeekView: View {
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @Binding var week: [Date.WeekDay]
 
     @Namespace private var animation
 
-    var week: [Date.WeekDay]
-
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(week) { day in
+            ForEach($week.wrappedValue) { day in
                 VStack(spacing: 8) {
                     Text(day.date.format("E"))
                         .font(.callout)
@@ -68,9 +67,6 @@ struct WeekView: View {
                         }
                     }
             }
-        }
-        .onAppear {
-            print("#### \(dateContainer.model)")
         }
     }
 }

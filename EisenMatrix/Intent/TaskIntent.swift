@@ -15,16 +15,16 @@ final class TaskIntent {
         self.model = model
     }
 
-    func fetchTask(currentDate: Binding<Date>) {
-        model?.fetchTask(currentDate: currentDate)
+    func fetchTask(currentDate: Binding<Date>, context: ModelContext?) {
+        model?.fetchTask(currentDate: currentDate, context: context)
     }
 
-    func addTask(task: Task, context: ModelContext?) {
-        model?.addTask(task: task, context: context)
+    func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?) {
+        model?.addTask(currentDate: currentDate, task: task, context: context)
     }
 
-    func deleteTask(task: Task, context: ModelContext?) {
-        model?.deleteTask(task: task, context: context)
+    func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?) {
+        model?.deleteTask(currentDate: currentDate, task: task, context: context)
     }
 }
 
@@ -33,7 +33,7 @@ protocol TaskModelStateProtocol {
 }
 
 protocol TaskModelActionProtocol {
-    func fetchTask(currentDate: Binding<Date>)
-    func addTask(task: Task, context: ModelContext?)
-    func deleteTask(task: Task, context: ModelContext?)
+    func fetchTask(currentDate: Binding<Date>, context: ModelContext?)
+    func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
+    func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
 }
