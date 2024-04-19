@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var dateContainer = DateContainer<DateIntent, DateModel>(model: DateModel(currentDate: .init(), weekSlider: [], currentWeekIndex: 1, createWeek: false, createNewTask: false))
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-            HeaderView(dateContainer: dateContainer)
+            HeaderView()
 
             ScrollView(.vertical) {
                 VStack {
-                    /// Tasks View
-                    TasksView(currentDate: $dateContainer.model.currentDate)
+                    TasksView()
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)
@@ -37,27 +37,13 @@ struct HomeView: View {
             })
             .padding(15)
         })
-        .onAppear(perform: {
-            if dateContainer.model.weekSlider.isEmpty {
-                let currentWeek = Date().fetchWeek()
 
-                if let firstDate = currentWeek.first?.date {
-                    dateContainer.model.weekSlider.append(firstDate.createPreviousWeek())
-                }
-
-                dateContainer.model.weekSlider.append(currentWeek)
-
-                if let lastDate = currentWeek.last?.date {
-                    dateContainer.model.weekSlider.append(lastDate.createNextWeek())
-                }
-            }
-        })
         .sheet(isPresented: $dateContainer.model.createNewTask, content: {
             NewTaskView()
                 .presentationDetents([.height(300)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
-                .presentationBackground(.orange)
+                .presentationBackground(.bar)
         })
     }
 }

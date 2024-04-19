@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @ObservedObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,15 +21,14 @@ struct HeaderView: View {
             }
             .font(.title.bold())
 
-            /// Friday, April 19, 2024
             Text(dateContainer.model.currentDate.format("EEEE, M월 dd일, YYYY년"))
                 .font(.system(size: 18, weight: .semibold, design: .default))
                 .textScale(.secondary)
                 .foregroundStyle(.gray)
 
             TabView(selection: $dateContainer.model.currentWeekIndex) {
-                ForEach($dateContainer.model.weekSlider.indices, id: \.self) { index in
-                    WeekView(dateContainer: dateContainer, week: dateContainer.model.weekSlider[index])
+                ForEach(dateContainer.model.weekSlider.indices, id: \.self) { index in
+                    WeekView(week: dateContainer.model.weekSlider[index])
                         .padding(.horizontal, 15)
                         .tag(index)
                 }
@@ -38,7 +37,7 @@ struct HeaderView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 90)
             .onChange(of: dateContainer.model.currentWeekIndex) { _, _ in
-                dateContainer.applyIntent(intent: .paginateWeek)
+                dateContainer.intent.paginateWeek()
             }
         }
         .hSpacing(.leading)
@@ -52,5 +51,22 @@ struct HeaderView: View {
                 dateContainer.model.createWeek = true
             }
         }
+
+        .onAppear(perform: {
+            if $dateContainer.model.weekSlider.isEmpty {
+                let currentWeek = Date().fetchWeek()
+
+                if let firstDate = currentWeek.first?.date {
+                    dateContainer.model.weekSlider.append(firstDate.createPreviousWeek())
+                }
+
+                dateContainer.model.weekSlider.append(currentWeek)
+
+                if let lastDate = currentWeek.last?.date {
+                    dateContainer.model.weekSlider.append(lastDate.createNextWeek())
+                }
+                print("#### \($dateContainer.model.weekSlider[0])")
+            }
+        })
     }
 }

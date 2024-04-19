@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct TaskRowView: View {
-    @Binding var task: TaskModel
-    /// Model Context
+    @Environment(\.modelContext) private var context
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @Binding var task: Task
 
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
@@ -31,22 +32,23 @@ struct TaskRowView: View {
                 }
 
             VStack(alignment: .leading, spacing: 8, content: {
-                Text(task.title)
+                Text(task.taskTitle)
                     .fontWeight(.semibold)
                     .foregroundStyle(.black)
 
-                Label(task.startDate?.format("hh:mm a") ?? Date.now.format("hh:mm a"), systemImage: "clock")
+                Label(task.startDate.format("MM.dd hh:mm a") ?? Date.now.format("MM.dd hh:mm a"), systemImage: "clock")
                     .font(.caption)
                     .foregroundStyle(.black)
             })
             .padding(15)
             .hSpacing(.leading)
-            .background(task.type.color, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
+            .background(Matrix.allCases.first(where: { $0.info == task.taskType })?.color ?? .red, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
             .strikethrough(task.isCompleted, pattern: .solid, color: .black)
             .contentShape(.contextMenuPreview, .rect(cornerRadius: 15))
             .contextMenu {
                 Button(role: .destructive) {
                     /// Deleting Task
+                    taskContainer.intent.deleteTask(task: task, context: context)
 
                 } label: {
                     Text("Delete Task")
@@ -63,8 +65,4 @@ struct TaskRowView: View {
 
         return .red
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -5,21 +5,22 @@
 //  Created by 준우의 MacBook 16 on 2/14/24.
 //
 
+import Combine
 import SwiftData
 import SwiftUI
 
 struct TasksView: View {
-    @StateObject var taskContainer = TaskContainer<TasksIntent, TasksModel>(model: TasksModel(testMode: true))
-
-    @Binding var currentDate: Date
-    /// SwiftData Dynamic Query
+    @Environment(\.modelContext) private var context
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
-            ForEach(Array(taskContainer.model.tasks.enumerated()), id: \.element.id) { index, task in
-                TaskRowView(task: $taskContainer.model.tasks[index])
+            ForEach($taskContainer.model.tasks, id: \.id) { task in
+
+                TaskRowView(task: task)
                     .background(alignment: .leading) {
-                        if taskContainer.model.tasks.last?.id != task.id {
+                        if $taskContainer.model.tasks.last?.id != task.id {
                             Rectangle()
                                 .frame(width: 1)
                                 .offset(x: 8)
@@ -41,6 +42,6 @@ struct TasksView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+// #Preview {
+//    ContentView()
+// }

@@ -13,6 +13,19 @@ enum Matrix: CaseIterable {
     case Delegate
     case Delete
 
+    var info: String {
+        switch self {
+        case .Do:
+            return "Do"
+        case .Decide:
+            return "Decide"
+        case .Delegate:
+            return "Delegate"
+        case .Delete:
+            return "Delete"
+        }
+    }
+
     var color: Color {
         switch self {
         case .Do:

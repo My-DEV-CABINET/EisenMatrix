@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct NewTaskView: View {
-    /// View Properties
+    @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
-    /// Model Context For Saving Date
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
  
     @State private var taskTitle: String = ""
     @State private var taskDate: Date = .init()
-    @State private var taskColor: String = "TaskColor 1"
+    @State private var taskColor: Color = Matrix.Do.color
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
@@ -58,25 +58,21 @@ struct NewTaskView: View {
                         .font(.caption)
                         .foregroundStyle(.gray)
                     
-                    let colors: [String] = (1 ... 5).compactMap { index -> String in
-                        return "TaskColor \(index)"
-                    }
-                    
                     HStack(spacing: 0) {
-                        ForEach(colors, id: \.self) { color in
+                        ForEach(Matrix.allCases, id: \.self) { matrix in
                             Circle()
-                                .fill(Color(color))
+                                .fill(matrix.color)
                                 .frame(width: 20, height: 20)
                                 .background(content: {
                                     Circle()
                                         .stroke(lineWidth: 2)
-                                        .opacity(taskColor == color ? 1 : 0)
+                                        .opacity(taskColor == matrix.color ? 1 : 0)
                                 })
                                 .hSpacing(.center)
                                 .contentShape(.rect)
                                 .onTapGesture {
                                     withAnimation {
-                                        taskColor = color
+                                        taskColor = matrix.color
                                     }
                                 }
                         }
@@ -88,8 +84,10 @@ struct NewTaskView: View {
             Spacer(minLength: 0)
                     
             Button(action: {
-                /// Saving Task
-               
+                let type = Matrix.allCases.filter { $0.color == taskColor }.first?.info
+                let task = Task(taskTitle: taskTitle, taskType: type ?? Matrix.Do.info, startDate: taskDate)
+                taskContainer.intent.addTask(task: task, context: context)
+                dismiss()
             }, label: {
                 Text("Create Task")
                     .font(.title3)
@@ -107,8 +105,8 @@ struct NewTaskView: View {
     }
 }
 
-#Preview {
-    NewTaskView()
-        .vSpacing(.bottom)
-}
+// #Preview {
+//    NewTaskView()
+//        .vSpacing(.bottom)
+// }
     

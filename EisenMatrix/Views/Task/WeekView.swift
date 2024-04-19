@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeekView: View {
-    @ObservedObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     @Namespace private var animation
 
@@ -68,6 +68,9 @@ struct WeekView: View {
                         }
                     }
             }
+        }
+        .onAppear {
+            print("#### \(dateContainer.model)")
         }
     }
 }
