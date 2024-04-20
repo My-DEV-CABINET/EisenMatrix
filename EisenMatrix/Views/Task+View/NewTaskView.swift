@@ -13,14 +13,12 @@ struct NewTaskView: View {
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
  
-    // MVI 패턴으로 정리 필요
-    @State private var taskTitle: String = ""
-    @State private var textEditorText: String = ""
-    @State private var taskDate: Date = .now
-    @State private var taskColor: Color = Matrix.Do.color
-    @State private var placeholder: String = "Enter a Task Memo Here!"
+    @ObservedObject private var newTaskContainer: NewTaskContainer<NewTaskModel> // NewTaskView의 상태변화 관리(전담)
     
-    @State private var isSwitch: Bool = false
+    init() {
+        let newTaskModel = NewTaskModel()
+        newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
@@ -38,7 +36,7 @@ struct NewTaskView: View {
                     .font(.caption)
                     .foregroundStyle(.gray)
                 
-                TextField("Enter a Task Title", text: $taskTitle)
+                TextField("Enter a Task Title", text: $newTaskContainer.model.taskTitle)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 15)
                     .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
@@ -50,7 +48,7 @@ struct NewTaskView: View {
                     .foregroundStyle(.gray)
                     
                 ZStack(alignment: .topLeading) {
-                    TextEditor(text: $textEditorText)
+                    TextEditor(text: $newTaskContainer.model.taskMemo)
                         .font(.system(size: 18, weight: .semibold))
                         .frame(minHeight: 100, maxHeight: 200)
                         .padding(.top, 8)
@@ -59,8 +57,8 @@ struct NewTaskView: View {
                         .cornerRadius(10)
                         .shadow(color: .black.opacity(0.25), radius: 2)
                      
-                    if textEditorText.isEmpty {
-                        Text($placeholder.wrappedValue)
+                    if $newTaskContainer.model.taskMemo.wrappedValue.isEmpty {
+                        Text($newTaskContainer.model.placeHolder.wrappedValue)
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundStyle(.placeholder)
                             .lineSpacing(10)
@@ -80,7 +78,7 @@ struct NewTaskView: View {
                         .font(.caption)
                         .foregroundStyle(.gray)
                 
-                    DatePicker("", selection: $taskDate)
+                    DatePicker("", selection: $newTaskContainer.model.taskDate)
                         .datePickerStyle(.compact)
                         .scaleEffect(0.9, anchor: .leading)
                 })
@@ -100,13 +98,13 @@ struct NewTaskView: View {
                                 .background(content: {
                                     Circle()
                                         .stroke(lineWidth: 2)
-                                        .opacity(taskColor == matrix.color ? 1 : 0)
+                                        .opacity($newTaskContainer.model.taskColor.wrappedValue == matrix.color ? 1 : 0)
                                 })
                                 .hSpacing(.center)
                                 .contentShape(.rect)
                                 .onTapGesture {
                                     withAnimation {
-                                        taskColor = matrix.color
+                                        $newTaskContainer.model.taskColor.wrappedValue = matrix.color
                                     }
                                 }
                         }
@@ -118,8 +116,13 @@ struct NewTaskView: View {
             Spacer(minLength: 0)
                     
             Button(action: {
-                let type = Matrix.allCases.filter { $0.color == taskColor }.first?.info
-                let task = Task(taskTitle: taskTitle, taskMemo: textEditorText, taskType: type ?? Matrix.Do.info, startDate: taskDate)
+                let type = Matrix.allCases.filter { $0.color == $newTaskContainer.model.taskColor.wrappedValue }.first?.info
+                let task = Task(
+                    taskTitle: $newTaskContainer.model.taskTitle.wrappedValue,
+                    taskMemo: $newTaskContainer.model.taskMemo.wrappedValue,
+                    taskType: type ?? Matrix.Do.info,
+                    creationDate: $newTaskContainer.model.taskDate.wrappedValue
+                )
                 taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
                 dismiss()
             }, label: {
@@ -130,10 +133,10 @@ struct NewTaskView: View {
                     .foregroundStyle(.black)
                     .hSpacing(.center)
                     .padding(.vertical, 12)
-                    .background(Color(taskColor), in: .rect(cornerRadius: 10))
+                    .background(Color($newTaskContainer.model.taskColor.wrappedValue), in: .rect(cornerRadius: 10))
             })
-            .disabled(taskTitle == "")
-            .opacity(taskTitle == "" ? 0.5 : 1)
+            .disabled($newTaskContainer.model.taskTitle.wrappedValue == "")
+            .opacity($newTaskContainer.model.taskTitle.wrappedValue == "" ? 0.5 : 1)
         })
         .padding(15)
     }

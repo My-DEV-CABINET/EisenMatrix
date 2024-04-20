@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
+		4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982552BD46B8100257850 /* DateProtocol.swift */; };
+		4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */; };
+		4E29825A2BD46D6B00257850 /* NewTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982592BD46D6B00257850 /* NewTaskModel.swift */; };
+		4E29825C2BD46E2600257850 /* NewTaskContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29825B2BD46E2600257850 /* NewTaskContainer.swift */; };
 		4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EF1DD2BD2338100C94463 /* Task.swift */; };
 		4E51254B2BD19BAF00579E2F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254A2BD19BAF00579E2F /* HeaderView.swift */; };
 		4E51254D2BD19BCC00579E2F /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254C2BD19BCC00579E2F /* WeekView.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2982532BD46B6700257850 /* TaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProtocol.swift; sourceTree = "<group>"; };
+		4E2982552BD46B8100257850 /* DateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProtocol.swift; sourceTree = "<group>"; };
+		4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskProtocol.swift; sourceTree = "<group>"; };
+		4E2982592BD46D6B00257850 /* NewTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModel.swift; sourceTree = "<group>"; };
+		4E29825B2BD46E2600257850 /* NewTaskContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskContainer.swift; sourceTree = "<group>"; };
 		4E2EF1DD2BD2338100C94463 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4E51254A2BD19BAF00579E2F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4E51254C2BD19BCC00579E2F /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -92,10 +102,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E2982512BD46B3200257850 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF6A2BD1374600748AEC /* ChartView.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		4E2982522BD46B3E00257850 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF6C2BD1374A00748AEC /* SettingView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4E5125502BD1A48000579E2F /* Containers */ = {
 			isa = PBXGroup;
 			children = (
 				4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */,
+				4E29825B2BD46E2600257850 /* NewTaskContainer.swift */,
 				4E51254E2BD1A47300579E2F /* DateContainer.swift */,
 			);
 			path = Containers;
@@ -105,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				4ECFEF662BD135AD00748AEC /* MainTabView.swift */,
-				4ECFEF862BD16DFF00748AEC /* Task */,
-				4ECFEF6A2BD1374600748AEC /* ChartView.swift */,
-				4ECFEF6C2BD1374A00748AEC /* SettingView.swift */,
+				4ECFEF862BD16DFF00748AEC /* Task+View */,
+				4E2982512BD46B3200257850 /* Charts */,
+				4E2982522BD46B3E00257850 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,11 +145,14 @@
 				4ECFEF742BD15FF700748AEC /* View+Extensions.swift */,
 				4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */,
 				4ECFEF782BD160F600748AEC /* OffsetKey.swift */,
+				4E2982532BD46B6700257850 /* TaskProtocol.swift */,
+				4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */,
+				4E2982552BD46B8100257850 /* DateProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4ECFEF862BD16DFF00748AEC /* Task */ = {
+		4ECFEF862BD16DFF00748AEC /* Task+View */ = {
 			isa = PBXGroup;
 			children = (
 				4ECFEF682BD1373F00748AEC /* HomeView.swift */,
@@ -132,16 +162,16 @@
 				4ECFEF842BD165D200748AEC /* TaskRowView.swift */,
 				4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */,
 			);
-			path = Task;
+			path = "Task+View";
 			sourceTree = "<group>";
 		};
 		4ECFEF872BD16E1500748AEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E5125502BD1A48000579E2F /* Containers */,
 				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
 				4E2EF1DD2BD2338100C94463 /* Task.swift */,
 				4ECFEF8A2BD16E4A00748AEC /* TaskModel.swift */,
+				4E2982592BD46D6B00257850 /* NewTaskModel.swift */,
 				4E5125512BD1A49900579E2F /* DateModel.swift */,
 			);
 			path = Model;
@@ -179,6 +209,7 @@
 			children = (
 				4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */,
 				4ED7D98C2BC3F0940015ED95 /* ContentView.swift */,
+				4E5125502BD1A48000579E2F /* Containers */,
 				4ECFEF732BD15FE000748AEC /* Helpers */,
 				4ECFEF8E2BD16E8A00748AEC /* Intent */,
 				4ECFEF872BD16E1500748AEC /* Model */,
@@ -309,14 +340,19 @@
 				4E51254B2BD19BAF00579E2F /* HeaderView.swift in Sources */,
 				4ECFEF832BD165B200748AEC /* TasksView.swift in Sources */,
 				4ECFEF8B2BD16E4A00748AEC /* TaskModel.swift in Sources */,
+				4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */,
 				4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */,
 				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
+				4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */,
 				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
+				4E29825A2BD46D6B00257850 /* NewTaskModel.swift in Sources */,
 				4E51254D2BD19BCC00579E2F /* WeekView.swift in Sources */,
 				4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */,
 				4ECFEF8D2BD16E5B00748AEC /* TaskIntent.swift in Sources */,
+				4E29825C2BD46E2600257850 /* NewTaskContainer.swift in Sources */,
 				4E5125522BD1A49900579E2F /* DateModel.swift in Sources */,
 				4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */,
+				4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */,
 				4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */,
 				4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */,
 				4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */,

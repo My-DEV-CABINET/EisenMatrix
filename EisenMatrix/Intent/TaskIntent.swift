@@ -27,13 +27,3 @@ final class TaskIntent {
         model?.deleteTask(currentDate: currentDate, task: task, context: context)
     }
 }
-
-protocol TaskModelStateProtocol {
-    var tasks: [Task] { get }
-}
-
-protocol TaskModelActionProtocol {
-    func syncTask(currentDate: Binding<Date>, context: ModelContext?)
-    func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
-    func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
-}

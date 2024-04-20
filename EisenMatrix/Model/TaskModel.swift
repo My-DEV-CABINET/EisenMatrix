@@ -17,7 +17,7 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
     init(testMode: Bool) {
         self.testMode = testMode
         if testMode == true {
-            tasks = Task.mockupDatas.sorted(by: { $0.startDate < $1.startDate })
+            tasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
         } else {
             tasks = []
         }
@@ -33,12 +33,12 @@ extension TaskModel: TaskModelActionProtocol {
             let endOfDate = calendar.date(byAdding: .day, value: 1, to: startOfDate)!
             /// Filtering: Task Data 가 시작날짜, 끝나는 날짜 사이에 있는 데이터 출력
             let predicate = #Predicate<Task> {
-                return $0.startDate >= startOfDate && $0.endDate ?? $0.startDate < endOfDate
+                return $0.creationDate >= startOfDate && $0.creationDate < endOfDate
             }
 
             /// Sorting
             let sortDescriptor = [
-                SortDescriptor(\Task.startDate, order: .forward)
+                SortDescriptor(\Task.creationDate, order: .forward)
             ]
 
             let descriptor = FetchDescriptor<Task>(predicate: predicate, sortBy: sortDescriptor)

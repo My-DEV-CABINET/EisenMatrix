@@ -29,13 +29,13 @@ enum Matrix: CaseIterable {
     var color: Color {
         switch self {
         case .Do:
-            return .green
+            return Color(UIColor.systemGreen)
         case .Decide:
-            return .yellow
+            return Color(UIColor.systemYellow)
         case .Delegate:
-            return .orange
+            return Color(UIColor.systemOrange)
         case .Delete:
-            return .red
+            return Color(UIColor.systemRed)
         }
     }
 }
