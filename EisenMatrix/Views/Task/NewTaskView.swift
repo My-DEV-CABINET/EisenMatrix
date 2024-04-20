@@ -13,11 +13,14 @@ struct NewTaskView: View {
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
  
+    // MVI 패턴으로 정리 필요
     @State private var taskTitle: String = ""
+    @State private var textEditorText: String = ""
     @State private var taskDate: Date = .now
     @State private var taskColor: Color = Matrix.Do.color
-    @State private var textEditorText: String = ""
     @State private var placeholder: String = "Enter a Task Memo Here!"
+    
+    @State private var isSwitch: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
@@ -81,7 +84,7 @@ struct NewTaskView: View {
                         .datePickerStyle(.compact)
                         .scaleEffect(0.9, anchor: .leading)
                 })
-                /// Giving Some Space for tapping
+                
                 .padding(.trailing, -15)
         
                 VStack(alignment: .leading, spacing: 8, content: {
