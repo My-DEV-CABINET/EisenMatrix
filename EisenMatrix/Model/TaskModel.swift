@@ -10,7 +10,7 @@ import SwiftUI
 
 final class TaskModel: ObservableObject, TaskModelStateProtocol {
     @Published var tasks: [Task]
-    @Query var items: [Task]
+    @Query private var items: [Task]
 
     var testMode: Bool
 
@@ -25,12 +25,11 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
 }
 
 extension TaskModel: TaskModelActionProtocol {
-    func fetchTask(currentDate: Binding<Date>, context: ModelContext?) {
+    func syncTask(currentDate: Binding<Date>, context: ModelContext?) {
         if testMode != true {
             let calendar = Calendar.current
-            /// 시작 날짜
+
             let startOfDate = calendar.startOfDay(for: currentDate.wrappedValue)
-            /// 종료 날짜
             let endOfDate = calendar.date(byAdding: .day, value: 1, to: startOfDate)!
             /// Filtering: Task Data 가 시작날짜, 끝나는 날짜 사이에 있는 데이터 출력
             let predicate = #Predicate<Task> {
@@ -58,7 +57,7 @@ extension TaskModel: TaskModelActionProtocol {
             do {
                 context?.insert(task)
                 try context?.save()
-                fetchTask(currentDate: currentDate, context: context)
+                syncTask(currentDate: currentDate, context: context)
             } catch {
                 print("#### Swift Data Save Error: \(error.localizedDescription)")
             }
@@ -70,7 +69,7 @@ extension TaskModel: TaskModelActionProtocol {
             do {
                 context?.delete(task)
                 try context?.save()
-                fetchTask(currentDate: currentDate, context: context)
+                syncTask(currentDate: currentDate, context: context)
             } catch {
                 print("#### Swift Data Save Delete: \(error.localizedDescription)")
             }

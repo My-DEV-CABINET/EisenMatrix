@@ -16,7 +16,7 @@ final class TaskIntent {
     }
 
     func fetchTask(currentDate: Binding<Date>, context: ModelContext?) {
-        model?.fetchTask(currentDate: currentDate, context: context)
+        model?.syncTask(currentDate: currentDate, context: context)
     }
 
     func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?) {
@@ -33,7 +33,7 @@ protocol TaskModelStateProtocol {
 }
 
 protocol TaskModelActionProtocol {
-    func fetchTask(currentDate: Binding<Date>, context: ModelContext?)
+    func syncTask(currentDate: Binding<Date>, context: ModelContext?)
     func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
     func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
 }

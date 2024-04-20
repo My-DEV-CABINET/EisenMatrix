@@ -40,7 +40,7 @@ struct HomeView: View {
 
         .sheet(isPresented: $dateContainer.model.createNewTask, content: {
             NewTaskView()
-                .presentationDetents([.height(300)])
+                .presentationDetents([.height(UIScreen.main.bounds.height * 0.66)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
                 .presentationBackground(.bar)

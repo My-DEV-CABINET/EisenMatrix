@@ -14,8 +14,10 @@ struct NewTaskView: View {
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
  
     @State private var taskTitle: String = ""
-    @State private var taskDate: Date = .currentKoreanDate()
+    @State private var taskDate: Date = .now
     @State private var taskColor: Color = Matrix.Do.color
+    @State private var textEditorText: String = ""
+    @State private var placeholder: String = "Enter a Task Memo Here!"
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
@@ -33,13 +35,41 @@ struct NewTaskView: View {
                     .font(.caption)
                     .foregroundStyle(.gray)
                 
-                TextField("Go for a Walk!", text: $taskTitle)
+                TextField("Enter a Task Title", text: $taskTitle)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 15)
                     .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
-
+                    
+                Spacer(minLength: 10)
+                    
+                Text("Task Memo")
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+                    
+                ZStack(alignment: .topLeading) {
+                    TextEditor(text: $textEditorText)
+                        .font(.system(size: 18, weight: .semibold))
+                        .frame(minHeight: 100, maxHeight: 200)
+                        .padding(.top, 8)
+                        .padding(.horizontal, 8)
+                        .background(.white)
+                        .cornerRadius(10)
+                        .shadow(color: .black.opacity(0.25), radius: 2)
+                     
+                    if textEditorText.isEmpty {
+                        Text($placeholder.wrappedValue)
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(.placeholder)
+                            .lineSpacing(10)
+                            .padding(.top, 16)
+                            .padding(.horizontal, 12)
+                    }
+                }
+                
             })
+    
             .padding(.top, 5)
+            .padding(.horizontal, 15)
         
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 8, content: {
@@ -86,7 +116,7 @@ struct NewTaskView: View {
                     
             Button(action: {
                 let type = Matrix.allCases.filter { $0.color == taskColor }.first?.info
-                let task = Task(taskTitle: taskTitle, taskType: type ?? Matrix.Do.info, startDate: taskDate)
+                let task = Task(taskTitle: taskTitle, taskMemo: textEditorText, taskType: type ?? Matrix.Do.info, startDate: taskDate)
                 taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
                 dismiss()
             }, label: {
