@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @ObservedObject var dateContainer: DateContainer<DateIntent, DateModel>
+
+    init(dateContainer: DateContainer<DateIntent, DateModel>) {
+        self.dateContainer = dateContainer
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -28,7 +32,7 @@ struct HeaderView: View {
 
             TabView(selection: $dateContainer.model.currentWeekIndex) {
                 ForEach(dateContainer.model.weekSlider.indices, id: \.self) { index in
-                    WeekView(week: $dateContainer.model.weekSlider[index])
+                    WeekView(dateContainer: dateContainer, week: $dateContainer.model.weekSlider[index])
                         .padding(.horizontal, 15)
                         .tag(index)
                 }

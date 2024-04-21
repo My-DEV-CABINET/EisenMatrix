@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct WeekView: View {
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
-    @Binding var week: [Date.WeekDay]
+    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @Binding private var week: [Date.WeekDay]
+
+    init(dateContainer: DateContainer<DateIntent, DateModel>, week: Binding<[Date.WeekDay]>) {
+        self.dateContainer = dateContainer
+        self._week = week
+    }
 
     @Namespace private var animation
 

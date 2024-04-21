@@ -9,20 +9,25 @@ import SwiftUI
 
 struct TaskRowView: View {
     @Environment(\.modelContext) private var context
-    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
-    @Binding var task: Task
-    @State private var isRowSelected: Bool = false
+    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @ObservedObject private var taskRowContainer: TaskRowContainer<TaskRowModel>
 
-    var indicatorColor: Color {
-        return task.isCompleted ? .blue : .red
+    @Binding private var task: Task
+
+    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>, task: Binding<Task>) {
+        self.taskContainer = taskContainer
+        self.dateContainer = dateContainer
+        self._task = task
+        let taskRowModel = TaskRowModel()
+        self.taskRowContainer = TaskRowContainer(model: taskRowModel, modelChangePublisher: taskRowModel.objectWillChange)
     }
 
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
             Circle()
-                .fill(indicatorColor)
+                .fill(task.isCompleted ? .green : .red)
                 .frame(width: 15, height: 15)
                 .padding(4)
                 .background(.white.shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
@@ -38,7 +43,7 @@ struct TaskRowView: View {
                         }
                 }
 
-            VStack(alignment: .leading, spacing: isRowSelected ? 20 : 10, content: {
+            VStack(alignment: .leading, spacing: $taskRowContainer.model.isRowSelected.wrappedValue ? 20 : 10, content: {
                 Text(task.taskTitle)
                     .lineLimit(.max)
                     .font(.title2)
@@ -60,12 +65,12 @@ struct TaskRowView: View {
 
             .padding(15)
             .hSpacing(.leading)
-            .frame(minHeight: isRowSelected ? 200 : 100, maxHeight: isRowSelected ? .infinity : 100)
+            .frame(minHeight: $taskRowContainer.model.isRowSelected.wrappedValue ? 200 : 100, maxHeight: $taskRowContainer.model.isRowSelected.wrappedValue ? .infinity : 100)
             .background(Matrix.allCases.first(where: { $0.info == task.taskType })?.color ?? .red, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
             .strikethrough(task.isCompleted, pattern: .solid, color: .black)
             .contentShape(.contextMenuPreview, .rect(cornerRadius: 15))
             .onTapGesture {
-                isRowSelected.toggle()
+                $taskRowContainer.model.isRowSelected.wrappedValue.toggle()
             }
 
             .contextMenu {

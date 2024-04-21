@@ -11,13 +11,18 @@ import SwiftUI
 
 struct TasksView: View {
     @Environment(\.modelContext) private var context
-    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
+
+    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
+        self.taskContainer = taskContainer
+        self.dateContainer = dateContainer
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
             ForEach($taskContainer.model.tasks, id: \.id) { task in
-                TaskRowView(task: task)
+                TaskRowView(taskContainer: taskContainer, dateContainer: dateContainer, task: task)
                     .background(alignment: .leading) {
                         if $taskContainer.model.tasks.last?.id != task.id {
                             Rectangle()

@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @StateObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @StateObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-            HeaderView()
+            HeaderView(dateContainer: dateContainer)
 
             ScrollView(.vertical) {
                 VStack {
-                    TasksView()
+                    TasksView(taskContainer: taskContainer, dateContainer: dateContainer)
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)
@@ -39,12 +39,26 @@ struct HomeView: View {
         })
 
         .sheet(isPresented: $dateContainer.model.createNewTask, content: {
-            NewTaskView()
+            NewTaskView(taskContainer: taskContainer, dateContainer: dateContainer)
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.66)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
                 .presentationBackground(.bar)
         })
+    }
+}
+
+extension HomeView {
+    static func build() -> some View {
+        let taskModel = TaskModel(testMode: false) // 예시로 testMode를 true로 설정
+        let taskIntent = TaskIntent(model: taskModel)
+        let taskContainer = TaskContainer(intent: taskIntent, model: taskModel, modelChangePublisher: taskModel.objectWillChange)
+
+        let dateModel = DateModel(currentDate: .init(), weekSlider: [], currentWeekIndex: 1, createWeek: false, createNewTask: false)
+        let dateIntent = DateIntent(model: dateModel)
+        let dateContainer = DateContainer(intent: dateIntent, model: dateModel, modelChangePublisher: dateModel.objectWillChange)
+
+        return HomeView(taskContainer: taskContainer, dateContainer: dateContainer)
     }
 }
 
