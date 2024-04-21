@@ -9,13 +9,17 @@ import SwiftUI
 
 final class DateModel: ObservableObject, DateModelStateProtocol {
     @Published var currentDate: Date
+    @Published var currentWeek: [Date.WeekDay]
+    @Published var currentMonth: [Date.WeekDay]
     @Published var weekSlider: [[Date.WeekDay]]
     @Published var currentWeekIndex: Int
     @Published var createWeek: Bool
     @Published var createNewTask: Bool
 
-    init(currentDate: Date = .init(), weekSlider: [[Date.WeekDay]] = [], currentWeekIndex: Int = 1, createWeek: Bool = false, createNewTask: Bool = false) {
+    init(currentDate: Date = .init(), currentWeek: [Date.WeekDay] = .init(), currentMonth: [Date.WeekDay] = .init(), weekSlider: [[Date.WeekDay]] = [], currentWeekIndex: Int = 1, createWeek: Bool = false, createNewTask: Bool = false) {
         self.currentDate = currentDate
+        self.currentWeek = currentWeek
+        self.currentMonth = currentMonth
         self.weekSlider = weekSlider
         self.currentWeekIndex = currentWeekIndex
         self.createWeek = createWeek
@@ -24,6 +28,19 @@ final class DateModel: ObservableObject, DateModelStateProtocol {
 }
 
 extension DateModel: DateModelAcionsProtocol {
+    func fetchCurrentWeek() {
+        let newWeek = Date.now.fetchCurrentWeek()
+        currentWeek = newWeek
+        print("#### \(currentWeek)")
+        objectWillChange.send()
+    }
+
+    func fetchCurrentMonth() {
+        let newMonth = Date.now.fetchCurrentMonth()
+        currentMonth = newMonth
+        objectWillChange.send()
+    }
+
     func paginateWeek() {
         if currentWeekIndex == 0 {
             // 맨 앞 주에 도달했을 때 로직

@@ -17,4 +17,12 @@ final class DateIntent {
     func paginateWeek() {
         model?.paginateWeek()
     }
+
+    func fetchCurrentWeek() {
+        model?.fetchCurrentWeek()
+    }
+
+    func fetchCurrentMonth() {
+        model?.fetchCurrentMonth()
+    }
 }

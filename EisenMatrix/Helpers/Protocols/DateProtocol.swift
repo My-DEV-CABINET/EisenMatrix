@@ -9,10 +9,14 @@ import Foundation
 
 protocol DateModelAcionsProtocol: AnyObject {
     func paginateWeek()
+    func fetchCurrentWeek()
+    func fetchCurrentMonth()
 }
 
 protocol DateModelStateProtocol {
     var currentDate: Date { get }
+    var currentWeek: [Date.WeekDay] { get }
+    var currentMonth: [Date.WeekDay] { get }
     var weekSlider: [[Date.WeekDay]] { get }
     var currentWeekIndex: Int { get }
     var createWeek: Bool { get }
