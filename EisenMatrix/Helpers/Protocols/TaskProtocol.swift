@@ -13,6 +13,7 @@ protocol TaskModelStateProtocol {
 }
 
 protocol TaskModelActionProtocol {
+    func fetchAllTask(context: ModelContext?)
     func syncTask(currentDate: Binding<Date>, context: ModelContext?)
     func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
     func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)

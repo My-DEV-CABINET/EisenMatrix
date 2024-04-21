@@ -25,6 +25,22 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
 }
 
 extension TaskModel: TaskModelActionProtocol {
+    func fetchAllTask(context: ModelContext?) {
+        /// Sorting
+        let sortDescriptor = [
+            SortDescriptor(\Task.creationDate, order: .forward)
+        ]
+
+        let descriptor = FetchDescriptor<Task>(sortBy: sortDescriptor)
+
+        do {
+            let temp = try? context?.fetch(descriptor)
+            tasks = temp ?? []
+
+            objectWillChange.send()
+        }
+    }
+
     func syncTask(currentDate: Binding<Date>, context: ModelContext?) {
         if testMode != true {
             let calendar = Calendar.current

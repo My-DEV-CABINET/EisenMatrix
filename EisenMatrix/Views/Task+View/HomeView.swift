@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @StateObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @ObservedObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @ObservedObject var dateContainer: DateContainer<DateIntent, DateModel>
+
+    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
+        self.taskContainer = taskContainer
+        self.dateContainer = dateContainer
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
@@ -45,20 +50,6 @@ struct HomeView: View {
                 .presentationCornerRadius(30)
                 .presentationBackground(.bar)
         })
-    }
-}
-
-extension HomeView {
-    static func build() -> some View {
-        let taskModel = TaskModel(testMode: false) // 예시로 testMode를 true로 설정
-        let taskIntent = TaskIntent(model: taskModel)
-        let taskContainer = TaskContainer(intent: taskIntent, model: taskModel, modelChangePublisher: taskModel.objectWillChange)
-
-        let dateModel = DateModel(currentDate: .init(), weekSlider: [], currentWeekIndex: 1, createWeek: false, createNewTask: false)
-        let dateIntent = DateIntent(model: dateModel)
-        let dateContainer = DateContainer(intent: dateIntent, model: dateModel, modelChangePublisher: dateModel.objectWillChange)
-
-        return HomeView(taskContainer: taskContainer, dateContainer: dateContainer)
     }
 }
 

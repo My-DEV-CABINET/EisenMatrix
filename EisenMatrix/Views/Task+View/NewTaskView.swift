@@ -141,6 +141,9 @@ struct NewTaskView: View {
             .opacity($newTaskContainer.model.taskTitle.wrappedValue == "" ? 0.5 : 1)
         })
         .padding(15)
+        .onDisappear {
+            print("#### NewTaskView Deinit")
+        }
     }
 }
 

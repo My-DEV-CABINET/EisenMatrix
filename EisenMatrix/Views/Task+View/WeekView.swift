@@ -10,13 +10,12 @@ import SwiftUI
 struct WeekView: View {
     @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
     @Binding private var week: [Date.WeekDay]
+    @Namespace private var animation
 
     init(dateContainer: DateContainer<DateIntent, DateModel>, week: Binding<[Date.WeekDay]>) {
         self.dateContainer = dateContainer
         self._week = week
     }
-
-    @Namespace private var animation
 
     var body: some View {
         HStack(spacing: 0) {
@@ -72,6 +71,10 @@ struct WeekView: View {
                         }
                     }
             }
+        }
+
+        .onDisappear {
+            print("#### WeekView Deinit")
         }
     }
 }

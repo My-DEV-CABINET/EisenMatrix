@@ -33,7 +33,7 @@ struct TasksView: View {
                     }
             }
             .onChange(of: $dateContainer.model.currentDate.wrappedValue) { _, _ in
-                taskContainer.intent.fetchTask(currentDate: $dateContainer.model.currentDate, context: context)
+                taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
             }
         }
         .padding([.vertical, .leading], 15)
@@ -48,7 +48,11 @@ struct TasksView: View {
             }
         }
         .onAppear(perform: {
-            taskContainer.intent.fetchTask(currentDate: $dateContainer.model.currentDate, context: context)
+            taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
         })
+
+        .onDisappear {
+            print("#### TasksView Deinit")
+        }
     }
 }

@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @StateObject var dateContainer: DateContainer<DateIntent, DateModel>
+
     var body: some View {
         TabView {
-            HomeView.build()
+            HomeView(taskContainer: taskContainer, dateContainer: dateContainer)
                 .tabItem {
                     Image(systemName: "checklist")
                 }
 
-            ChartView()
+            ChartView(taskContainer: taskContainer, dateContainer: dateContainer)
                 .tabItem {
                     Image(systemName: "chart.bar.fill")
                 }
@@ -26,5 +29,19 @@ struct MainTabView: View {
                 }
         }
         .font(.headline)
+    }
+}
+
+extension MainTabView {
+    static func build() -> some View {
+        let taskModel = TaskModel(testMode: false)
+        let taskIntent = TaskIntent(model: taskModel)
+        let taskContainer = TaskContainer(intent: taskIntent, model: taskModel, modelChangePublisher: taskModel.objectWillChange)
+
+        let dateModel = DateModel(currentDate: .init(), weekSlider: [], currentWeekIndex: 1, createWeek: false, createNewTask: false)
+        let dateIntent = DateIntent(model: dateModel)
+        let dateContainer = DateContainer(intent: dateIntent, model: dateModel, modelChangePublisher: dateModel.objectWillChange)
+
+        return MainTabView(taskContainer: taskContainer, dateContainer: dateContainer)
     }
 }

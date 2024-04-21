@@ -71,5 +71,9 @@ struct HeaderView: View {
                 }
             }
         })
+
+        .onDisappear {
+            print("#### HeaderView Deinit")
+        }
     }
 }

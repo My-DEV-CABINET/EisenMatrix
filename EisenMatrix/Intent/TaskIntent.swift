@@ -15,7 +15,11 @@ final class TaskIntent {
         self.model = model
     }
 
-    func fetchTask(currentDate: Binding<Date>, context: ModelContext?) {
+    func fetchAllTask(context: ModelContext?) {
+        model?.fetchAllTask(context: context)
+    }
+
+    func syncTask(currentDate: Binding<Date>, context: ModelContext?) {
         model?.syncTask(currentDate: currentDate, context: context)
     }
 

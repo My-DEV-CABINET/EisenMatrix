@@ -84,5 +84,9 @@ struct TaskRowView: View {
             }
             .offset(y: -8)
         }
+
+        .onDisappear {
+            print("#### TaskRowView Deinit")
+        }
     }
 }
