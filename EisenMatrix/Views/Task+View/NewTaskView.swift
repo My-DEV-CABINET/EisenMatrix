@@ -23,15 +23,30 @@ struct NewTaskView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15, content: {
-            Button(action: {
-                dismiss()
-            }, label: {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title)
-                    .tint(.red)
-            })
-            .hSpacing(.leading)
+        VStack(alignment: .leading, spacing: 10, content: {
+            HStack {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .tint(.red)
+                })
+                .hSpacing(.leading)
+                
+                Toggle(isOn: $newTaskContainer.model.isSwitch) {
+                    Label("Alert", systemImage: newTaskContainer.model.isSwitch ? "bell.fill" : "bell.slash.fill")
+                        .font(.subheadline)
+                        .frame(width: 80, height: 30)
+                        .foregroundStyle(.white)
+                        .background(Color($newTaskContainer.model.taskColor.wrappedValue))
+                        .clipShape(.rect(cornerRadius: 10))
+                        .padding()
+                }
+                .toggleStyle(SwitchToggleStyle(tint: Color($newTaskContainer.model.taskColor.wrappedValue)))
+                .padding(.trailing, 8)
+            }
+            .padding(.top, 8)
             
             VStack(alignment: .leading, spacing: 8, content: {
                 Text("Task Title")
@@ -123,7 +138,8 @@ struct NewTaskView: View {
                     taskTitle: $newTaskContainer.model.taskTitle.wrappedValue,
                     taskMemo: $newTaskContainer.model.taskMemo.wrappedValue,
                     taskType: type ?? Matrix.Do.info,
-                    creationDate: $newTaskContainer.model.taskDate.wrappedValue
+                    creationDate: $newTaskContainer.model.taskDate.wrappedValue,
+                    isAlert: $newTaskContainer.model.isSwitch.wrappedValue
                 )
                 taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
                 dismiss()

@@ -13,4 +13,5 @@ protocol NewTaskModelStateProtocol {
     var taskDate: Date { get }
     var taskColor: Color { get }
     var placeHolder: String { get }
+    var isSwitch: Bool { get }
 }

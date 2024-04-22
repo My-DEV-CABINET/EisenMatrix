@@ -31,7 +31,6 @@ extension DateModel: DateModelAcionsProtocol {
     func fetchCurrentWeek() {
         let newWeek = Date.now.fetchCurrentWeek()
         currentWeek = newWeek
-        print("#### \(currentWeek)")
         objectWillChange.send()
     }
 

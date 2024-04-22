@@ -31,7 +31,7 @@ enum Matrix: CaseIterable {
         case .Do:
             return Color(UIColor.systemGreen)
         case .Decide:
-            return Color(UIColor.systemYellow)
+            return Color(UIColor.systemBlue)
         case .Delegate:
             return Color(UIColor.systemOrange)
         case .Delete:

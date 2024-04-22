@@ -13,26 +13,27 @@ struct ChartView: View {
     @Environment(\.modelContext) private var context
     @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
     @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
-    
+
     init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
         self.taskContainer = taskContainer
         self.dateContainer = dateContainer
     }
-    
+
     private let sampleDatas = Task.mockupDatas
-    
+
     var body: some View {
         ScrollView(.vertical) {
-            VStack(spacing: 8) {
+            VStack(spacing: 6) {
                 TotalTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
-                    
-                   
+         
+  
+
+                Spacer()
                 WeekTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
-                  
        
                 Spacer()
-                    
                 MonthTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
+
             }
             .padding()
         }

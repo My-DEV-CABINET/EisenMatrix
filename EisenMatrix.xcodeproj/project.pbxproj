@@ -114,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0B3AD12BD5E68300E9DD70 /* MVI-Model */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF8A2BD16E4A00748AEC /* TaskModel.swift */,
+				4E30312B2BD491E400AE2982 /* TaskRowModel.swift */,
+				4E2982592BD46D6B00257850 /* NewTaskModel.swift */,
+				4E5125512BD1A49900579E2F /* DateModel.swift */,
+			);
+			path = "MVI-Model";
+			sourceTree = "<group>";
+		};
 		4E2982512BD46B3200257850 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,10 +206,6 @@
 			children = (
 				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
 				4E2EF1DD2BD2338100C94463 /* Task.swift */,
-				4ECFEF8A2BD16E4A00748AEC /* TaskModel.swift */,
-				4E30312B2BD491E400AE2982 /* TaskRowModel.swift */,
-				4E2982592BD46D6B00257850 /* NewTaskModel.swift */,
-				4E5125512BD1A49900579E2F /* DateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				4E5125502BD1A48000579E2F /* Containers */,
 				4ECFEF732BD15FE000748AEC /* Helpers */,
 				4ECFEF8E2BD16E8A00748AEC /* Intent */,
+				4E0B3AD12BD5E68300E9DD70 /* MVI-Model */,
 				4ECFEF872BD16E1500748AEC /* Model */,
 				4ECFEF6E2BD1375200748AEC /* Views */,
 				4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */,

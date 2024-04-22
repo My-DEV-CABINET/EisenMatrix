@@ -42,26 +42,36 @@ struct TaskRowView: View {
                             }
                         }
                 }
-
-            VStack(alignment: .leading, spacing: $taskRowContainer.model.isRowSelected.wrappedValue ? 20 : 10, content: {
-                Text(task.taskTitle)
-                    .lineLimit(.max)
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-
-                if task.taskMemo?.isEmpty != true {
-                    Text(task.taskMemo ?? "")
-                        .font(.subheadline)
+            ZStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: $taskRowContainer.model.isRowSelected.wrappedValue ? 20 : 10, content: {
+                    Text(task.taskTitle)
                         .lineLimit(.max)
+                        .font(.title2)
                         .fontWeight(.semibold)
-                        .foregroundStyle(.black)
-                }
+                        .foregroundStyle(.white)
 
-                Label(task.creationDate.format("MM.dd hh:mm a"), systemImage: "clock")
-                    .font(.caption)
-                    .foregroundStyle(.black)
-            })
+                    if task.taskMemo?.isEmpty != true {
+                        Text(task.taskMemo ?? "")
+                            .font(.subheadline)
+                            .lineLimit(.max)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.black)
+                    }
+
+                    Label(task.creationDate.format("MM.dd hh:mm a"), systemImage: "clock")
+                        .font(.caption)
+                        .foregroundStyle(.black)
+
+                })
+
+                Image(systemName: task.isAlert ?? false ? "bell" : "bell.slash")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .font(.footnote)
+                    .foregroundStyle(.white)
+                    .vSpacing(.center)
+                    .hSpacing(.trailing)
+            }
 
             .padding(15)
             .hSpacing(.leading)
@@ -74,6 +84,14 @@ struct TaskRowView: View {
             }
 
             .contextMenu {
+                Button(role: .none) {
+                    /// Alert Task
+                    task.isAlert?.toggle()
+
+                } label: {
+                    Text(task.isAlert ?? false ? "Alert Off" : "Alert On")
+                }
+
                 Button(role: .destructive) {
                     /// Deleting Task
                     taskContainer.intent.deleteTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
@@ -90,3 +108,4 @@ struct TaskRowView: View {
         }
     }
 }
+

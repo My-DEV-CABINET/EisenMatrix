@@ -15,11 +15,12 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
     @Published var currentMonthTasks: [Task]
     @Query private var items: [Task]
 
-    var testMode: Bool
+    private var testMode: Bool
 
     init(testMode: Bool) {
         self.testMode = testMode
         if testMode == true {
+            // Mock Up Datas
             allTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
             currentDayTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
             currentWeekTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
