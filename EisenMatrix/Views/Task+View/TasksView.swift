@@ -21,10 +21,10 @@ struct TasksView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
-            ForEach($taskContainer.model.tasks, id: \.id) { task in
+            ForEach($taskContainer.model.currentDayTasks, id: \.id) { task in
                 TaskRowView(taskContainer: taskContainer, dateContainer: dateContainer, task: task)
                     .background(alignment: .leading) {
-                        if $taskContainer.model.tasks.last?.id != task.id {
+                        if $taskContainer.model.currentDayTasks.last?.id != task.id {
                             Rectangle()
                                 .frame(width: 3)
                                 .offset(x: 10)
@@ -39,7 +39,7 @@ struct TasksView: View {
         .padding([.vertical, .leading], 15)
         .padding(.top, 15)
         .overlay {
-            if taskContainer.model.tasks.isEmpty {
+            if $taskContainer.model.currentDayTasks.wrappedValue.isEmpty {
                 Text("No Task's Found")
                     .font(.system(size: 22, weight: .bold, design: .default))
                     .foregroundStyle(.gray)
@@ -47,6 +47,7 @@ struct TasksView: View {
                     .position(y: UIScreen.main.bounds.height / 3.5)
             }
         }
+
         .onAppear(perform: {
             taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
         })

@@ -14,6 +14,14 @@ final class TaskIntent {
     init(model: TaskModelActionProtocol) {
         self.model = model
     }
+    
+    func fetchCurrentMonthTask(currentMonth: Binding<[Date.WeekDay]>, context: ModelContext?) {
+        model?.fetchCurrentMonthTask(currentMonth: currentMonth, context: context)
+    }
+    
+    func fetchCurrentWeekTask(currentWeek: Binding<[Date.WeekDay]>, context: ModelContext?) {
+        model?.fetchCurrentWeekTask(currentWeek: currentWeek, context: context)
+    }
 
     func fetchAllTask(context: ModelContext?) {
         model?.fetchAllTask(context: context)

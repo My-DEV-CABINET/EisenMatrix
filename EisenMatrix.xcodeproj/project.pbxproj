@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */; };
+		4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */; };
+		4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */; };
 		4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
 		4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982552BD46B8100257850 /* DateProtocol.swift */; };
 		4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTaskChartView.swift; sourceTree = "<group>"; };
+		4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTaskChartView.swift; sourceTree = "<group>"; };
+		4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTaskChartView.swift; sourceTree = "<group>"; };
 		4E2982532BD46B6700257850 /* TaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProtocol.swift; sourceTree = "<group>"; };
 		4E2982552BD46B8100257850 /* DateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProtocol.swift; sourceTree = "<group>"; };
 		4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskProtocol.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				4ECFEF6A2BD1374600748AEC /* ChartView.swift */,
+				4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */,
+				4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */,
+				4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -353,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */,
 				4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */,
 				4E30312A2BD4914700AE2982 /* TaskRowProtocol.swift in Sources */,
 				4E51254B2BD19BAF00579E2F /* HeaderView.swift in Sources */,
@@ -363,6 +373,7 @@
 				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
 				4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */,
 				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
+				4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */,
 				4E29825A2BD46D6B00257850 /* NewTaskModel.swift in Sources */,
 				4E51254D2BD19BCC00579E2F /* WeekView.swift in Sources */,
 				4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */,
@@ -382,6 +393,7 @@
 				4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */,
 				4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */,
 				4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */,
+				4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */,
 				4E51254F2BD1A47300579E2F /* DateContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

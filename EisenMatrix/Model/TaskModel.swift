@@ -9,7 +9,10 @@ import SwiftData
 import SwiftUI
 
 final class TaskModel: ObservableObject, TaskModelStateProtocol {
-    @Published var tasks: [Task]
+    @Published var allTasks: [Task]
+    @Published var currentDayTasks: [Task]
+    @Published var currentWeekTasks: [Task]
+    @Published var currentMonthTasks: [Task]
     @Query private var items: [Task]
 
     var testMode: Bool
@@ -17,14 +20,71 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
     init(testMode: Bool) {
         self.testMode = testMode
         if testMode == true {
-            tasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
+            allTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
+            currentDayTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
+            currentWeekTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
+            currentMonthTasks = Task.mockupDatas.sorted(by: { $0.creationDate < $1.creationDate })
         } else {
-            tasks = []
+            allTasks = []
+            currentDayTasks = []
+            currentWeekTasks = []
+            currentMonthTasks = []
         }
     }
 }
 
 extension TaskModel: TaskModelActionProtocol {
+    func fetchCurrentMonthTask(currentMonth: Binding<[Date.WeekDay]>, context: ModelContext?) {
+        let calendar = Calendar.current
+
+        let startOfDate = calendar.startOfDay(for: currentMonth.first!.date.wrappedValue)
+        let endOfDate = calendar.startOfDay(for: currentMonth.last!.date.wrappedValue)
+
+        /// Filtering: Task Data 가 시작날짜, 끝나는 날짜 사이에 있는 데이터 출력
+        let predicate = #Predicate<Task> {
+            return $0.creationDate >= startOfDate && $0.creationDate < endOfDate
+        }
+
+        /// Sorting
+        let sortDescriptor = [
+            SortDescriptor(\Task.creationDate, order: .forward)
+        ]
+
+        let descriptor = FetchDescriptor<Task>(predicate: predicate, sortBy: sortDescriptor)
+
+        do {
+            let temp = try? context?.fetch(descriptor)
+            currentMonthTasks = temp ?? []
+
+            objectWillChange.send()
+        }
+    }
+
+    func fetchCurrentWeekTask(currentWeek: Binding<[Date.WeekDay]>, context: ModelContext?) {
+        let calendar = Calendar.current
+
+        let startOfDate = calendar.startOfDay(for: currentWeek.first!.date.wrappedValue)
+        let endOfDate = calendar.startOfDay(for: currentWeek.last!.date.wrappedValue)
+        /// Filtering: Task Data 가 시작날짜, 끝나는 날짜 사이에 있는 데이터 출력
+        let predicate = #Predicate<Task> {
+            return $0.creationDate >= startOfDate && $0.creationDate < endOfDate
+        }
+
+        /// Sorting
+        let sortDescriptor = [
+            SortDescriptor(\Task.creationDate, order: .forward)
+        ]
+
+        let descriptor = FetchDescriptor<Task>(predicate: predicate, sortBy: sortDescriptor)
+
+        do {
+            let temp = try? context?.fetch(descriptor)
+            currentWeekTasks = temp ?? []
+
+            objectWillChange.send()
+        }
+    }
+
     func fetchAllTask(context: ModelContext?) {
         /// Sorting
         let sortDescriptor = [
@@ -35,7 +95,7 @@ extension TaskModel: TaskModelActionProtocol {
 
         do {
             let temp = try? context?.fetch(descriptor)
-            tasks = temp ?? []
+            allTasks = temp ?? []
 
             objectWillChange.send()
         }
@@ -47,6 +107,7 @@ extension TaskModel: TaskModelActionProtocol {
 
             let startOfDate = calendar.startOfDay(for: currentDate.wrappedValue)
             let endOfDate = calendar.date(byAdding: .day, value: 1, to: startOfDate)!
+
             /// Filtering: Task Data 가 시작날짜, 끝나는 날짜 사이에 있는 데이터 출력
             let predicate = #Predicate<Task> {
                 return $0.creationDate >= startOfDate && $0.creationDate < endOfDate
@@ -61,7 +122,7 @@ extension TaskModel: TaskModelActionProtocol {
 
             do {
                 let temp = try? context?.fetch(descriptor)
-                tasks = temp ?? []
+                currentDayTasks = temp ?? []
 
                 objectWillChange.send()
             }
