@@ -14,6 +14,7 @@ struct HomeView: View {
     init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
         self.taskContainer = taskContainer
         self.dateContainer = dateContainer
+        NotificationService.shared.setAuthorization()
     }
 
     var body: some View {

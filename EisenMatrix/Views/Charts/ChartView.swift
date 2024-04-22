@@ -23,17 +23,12 @@ struct ChartView: View {
 
     var body: some View {
         ScrollView(.vertical) {
-            VStack(spacing: 6) {
+            VStack(alignment: .center, spacing: 4) {
                 TotalTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
-         
-  
-
                 Spacer()
                 WeekTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
-       
                 Spacer()
                 MonthTaskChartView(taskContainer: taskContainer, dateContainer: dateContainer)
-
             }
             .padding()
         }

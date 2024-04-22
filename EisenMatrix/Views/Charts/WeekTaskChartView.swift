@@ -48,7 +48,7 @@ struct WeekTaskChartView: View {
                 AxisMarks(position: .trailing)
             }
         }
-        .chartYScale(domain: 0 ... 5)
+        .chartYScale(domain: 0 ... 8)
         .frame(height: 300)
         .padding()
         .overlay {

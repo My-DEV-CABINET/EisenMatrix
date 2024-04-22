@@ -10,6 +10,9 @@
 		4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */; };
 		4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */; };
 		4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */; };
+		4E1559FC2BD6B56A00EFB6A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */; };
+		4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */; };
+		4E155A002BD6BDE600EFB6A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */; };
 		4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
 		4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982552BD46B8100257850 /* DateProtocol.swift */; };
 		4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */; };
@@ -24,6 +27,7 @@
 		4E51254F2BD1A47300579E2F /* DateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254E2BD1A47300579E2F /* DateContainer.swift */; };
 		4E5125522BD1A49900579E2F /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5125512BD1A49900579E2F /* DateModel.swift */; };
 		4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5125532BD1A4A700579E2F /* DateIntent.swift */; };
+		4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
 		4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF662BD135AD00748AEC /* MainTabView.swift */; };
 		4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* HomeView.swift */; };
 		4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6A2BD1374600748AEC /* ChartView.swift */; };
@@ -59,6 +63,9 @@
 		4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTaskChartView.swift; sourceTree = "<group>"; };
 		4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTaskChartView.swift; sourceTree = "<group>"; };
 		4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTaskChartView.swift; sourceTree = "<group>"; };
+		4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4E2982532BD46B6700257850 /* TaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProtocol.swift; sourceTree = "<group>"; };
 		4E2982552BD46B8100257850 /* DateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProtocol.swift; sourceTree = "<group>"; };
 		4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskProtocol.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		4E51254E2BD1A47300579E2F /* DateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainer.swift; sourceTree = "<group>"; };
 		4E5125512BD1A49900579E2F /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		4E5125532BD1A4A700579E2F /* DateIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntent.swift; sourceTree = "<group>"; };
+		4EBFAEC92BD64556009B8B50 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4ECFEF662BD135AD00748AEC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4ECFEF682BD1373F00748AEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4ECFEF6A2BD1374600748AEC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 				4ECFEF742BD15FF700748AEC /* View+Extensions.swift */,
 				4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */,
 				4ECFEF782BD160F600748AEC /* OffsetKey.swift */,
+				4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */,
 				4E3031282BD4906B00AE2982 /* Protocols */,
 			);
 			path = Helpers;
@@ -205,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
+				4EBFAEC92BD64556009B8B50 /* Action.swift */,
 				4E2EF1DD2BD2338100C94463 /* Task.swift */,
 			);
 			path = Model;
@@ -242,6 +252,8 @@
 			children = (
 				4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */,
 				4ED7D98C2BC3F0940015ED95 /* ContentView.swift */,
+				4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */,
+				4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */,
 				4E5125502BD1A48000579E2F /* Containers */,
 				4ECFEF732BD15FE000748AEC /* Helpers */,
 				4ECFEF8E2BD16E8A00748AEC /* Intent */,
@@ -379,8 +391,10 @@
 				4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */,
 				4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */,
 				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
+				4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */,
 				4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */,
 				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
+				4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */,
 				4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */,
 				4E29825A2BD46D6B00257850 /* NewTaskModel.swift in Sources */,
 				4E51254D2BD19BCC00579E2F /* WeekView.swift in Sources */,
@@ -392,6 +406,8 @@
 				4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */,
 				4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */,
 				4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */,
+				4E155A002BD6BDE600EFB6A1 /* SceneDelegate.swift in Sources */,
+				4E1559FC2BD6B56A00EFB6A1 /* NotificationService.swift in Sources */,
 				4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */,
 				4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */,
 				4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */,

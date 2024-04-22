@@ -77,7 +77,8 @@ struct TaskRowView: View {
             .hSpacing(.leading)
             .frame(minHeight: $taskRowContainer.model.isRowSelected.wrappedValue ? 200 : 100, maxHeight: $taskRowContainer.model.isRowSelected.wrappedValue ? .infinity : 100)
             .background(Matrix.allCases.first(where: { $0.info == task.taskType })?.color ?? .red, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
-            .strikethrough(task.isCompleted, pattern: .solid, color: .black)
+            .opacity(task.isCompleted ? 0.5 : 1)
+            .strikethrough(task.isCompleted, pattern: .solid, color: Color(UIColor.systemGray6))
             .contentShape(.contextMenuPreview, .rect(cornerRadius: 15))
             .onTapGesture {
                 $taskRowContainer.model.isRowSelected.wrappedValue.toggle()
@@ -108,4 +109,3 @@ struct TaskRowView: View {
         }
     }
 }
-
