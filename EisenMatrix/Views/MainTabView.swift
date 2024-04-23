@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @StateObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @StateObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+
+    init() {
+        NotificationService.shared.setAuthorization()
+    }
 
     var body: some View {
         TabView {
-            HomeView(taskContainer: taskContainer, dateContainer: dateContainer)
+            HomeView()
                 .tabItem {
                     Image(systemName: "checklist")
                 }
 
-            ChartView(taskContainer: taskContainer, dateContainer: dateContainer)
+            ChartView()
                 .tabItem {
                     Image(systemName: "chart.bar.fill")
                 }
@@ -29,19 +33,14 @@ struct MainTabView: View {
                 }
         }
         .font(.headline)
-    }
-}
+        .onAppear {
+            dateContainer.model.timeStart()
+            print("#### \(dateContainer.model.now)")
+        }
 
-extension MainTabView {
-    static func build() -> some View {
-        let taskModel = TaskModel(testMode: false)
-        let taskIntent = TaskIntent(model: taskModel)
-        let taskContainer = TaskContainer(intent: taskIntent, model: taskModel, modelChangePublisher: taskModel.objectWillChange)
-
-        let dateModel = DateModel(currentDate: .init(), weekSlider: [], currentWeekIndex: 1, createWeek: false, createNewTask: false)
-        let dateIntent = DateIntent(model: dateModel)
-        let dateContainer = DateContainer(intent: dateIntent, model: dateModel, modelChangePublisher: dateModel.objectWillChange)
-
-        return MainTabView(taskContainer: taskContainer, dateContainer: dateContainer)
+        .onDisappear {
+            print("#### MainTabView Deinit")
+            dateContainer.model.timeStop()
+        }
     }
 }

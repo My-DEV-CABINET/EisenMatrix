@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @ObservedObject var dateContainer: DateContainer<DateIntent, DateModel>
-
-    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
-        self.taskContainer = taskContainer
-        self.dateContainer = dateContainer
-        NotificationService.shared.setAuthorization()
-    }
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-            HeaderView(dateContainer: dateContainer)
+            HeaderView()
 
             ScrollView(.vertical) {
                 VStack {
-                    TasksView(taskContainer: taskContainer, dateContainer: dateContainer)
+                    TasksView()
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)
@@ -45,12 +39,21 @@ struct HomeView: View {
         })
 
         .sheet(isPresented: $dateContainer.model.createNewTask, content: {
-            NewTaskView(taskContainer: taskContainer, dateContainer: dateContainer)
+            NewTaskView()
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.66)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
                 .presentationBackground(.bar)
         })
+
+        .onAppear {
+            dateContainer.model.timeStart()
+        }
+
+        .onDisappear {
+            print("#### HomeView Deinit")
+//            dateContainer.model.timeStop()
+        }
     }
 }
 

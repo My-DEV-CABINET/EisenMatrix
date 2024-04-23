@@ -5,9 +5,11 @@
 //  Created by 준우의 MacBook 16 on 4/19/24.
 //
 
+import Combine
 import SwiftUI
 
 final class DateModel: ObservableObject, DateModelStateProtocol {
+    @Published var now: Date = .init()
     @Published var currentDate: Date
     @Published var currentWeek: [Date.WeekDay]
     @Published var currentMonth: [Date.WeekDay]
@@ -15,6 +17,8 @@ final class DateModel: ObservableObject, DateModelStateProtocol {
     @Published var currentWeekIndex: Int
     @Published var createWeek: Bool
     @Published var createNewTask: Bool
+
+    private var timerCancellable: AnyCancellable?
 
     init(currentDate: Date = .init(), currentWeek: [Date.WeekDay] = .init(), currentMonth: [Date.WeekDay] = .init(), weekSlider: [[Date.WeekDay]] = [], currentWeekIndex: Int = 1, createWeek: Bool = false, createNewTask: Bool = false) {
         self.currentDate = currentDate
@@ -24,6 +28,22 @@ final class DateModel: ObservableObject, DateModelStateProtocol {
         self.currentWeekIndex = currentWeekIndex
         self.createWeek = createWeek
         self.createNewTask = createNewTask
+        
+        timeStart()
+    }
+}
+
+extension DateModel {
+    func timeStart() {
+        timerCancellable = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                self?.now = Date.now // 매초마다 현재 시간으로 업데이트
+            }
+    }
+
+    func timeStop() {
+        timerCancellable?.cancel()
     }
 }
 

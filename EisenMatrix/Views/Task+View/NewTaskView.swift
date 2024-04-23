@@ -11,13 +11,11 @@ struct NewTaskView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
     @ObservedObject private var newTaskContainer: NewTaskContainer<NewTaskModel> // NewTaskView의 상태변화 관리(전담)
     
-    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
-        self.taskContainer = taskContainer
-        self.dateContainer = dateContainer
+    init() {
         let newTaskModel = NewTaskModel()
         newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
     }

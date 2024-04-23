@@ -10,18 +10,18 @@ import SwiftUI
 struct TaskRowView: View {
     @Environment(\.modelContext) private var context
 
-    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
-    @ObservedObject private var taskRowContainer: TaskRowContainer<TaskRowModel>
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @StateObject private var taskRowContainer: TaskRowContainer<TaskRowModel> = {
+        let taskRowModel = TaskRowModel()
+        let taskRowContainer = TaskRowContainer(model: taskRowModel, modelChangePublisher: taskRowModel.objectWillChange)
+        return taskRowContainer
+    }()
 
     @Binding private var task: Task
 
-    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>, task: Binding<Task>) {
-        self.taskContainer = taskContainer
-        self.dateContainer = dateContainer
+    init(task: Binding<Task>) {
         self._task = task
-        let taskRowModel = TaskRowModel()
-        self.taskRowContainer = TaskRowContainer(model: taskRowModel, modelChangePublisher: taskRowModel.objectWillChange)
     }
 
     var body: some View {

@@ -11,18 +11,13 @@ import SwiftUI
 
 struct TasksView: View {
     @Environment(\.modelContext) private var context
-    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
-
-    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
-        self.taskContainer = taskContainer
-        self.dateContainer = dateContainer
-    }
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
             ForEach($taskContainer.model.currentDayTasks, id: \.id) { task in
-                TaskRowView(taskContainer: taskContainer, dateContainer: dateContainer, task: task)
+                TaskRowView(task: task)
                     .background(alignment: .leading) {
                         if $taskContainer.model.currentDayTasks.last?.id != task.id {
                             Rectangle()
@@ -31,11 +26,13 @@ struct TasksView: View {
                                 .padding(.bottom, -35)
                         }
                     }
+
                     .onAppear(perform: {
                         if task.isAlert.wrappedValue == true, task.creationDate.wrappedValue.format("YYYY-MM-dd hh:mm") == Date.now.format("YYYY-MM-dd hh:mm") {
                             NotificationService.shared.pushNotification(title: task.taskTitle.wrappedValue, body: task.taskMemo.wrappedValue ?? "n/a", seconds: 1, identifier: task.id.uuidString)
                             task.isAlert.wrappedValue?.toggle()
                         }
+
                     })
 
                     .onChange(of: task.isAlert.wrappedValue) { oldValue, newValue in
@@ -44,6 +41,14 @@ struct TasksView: View {
                             task.isAlert.wrappedValue?.toggle()
                         }
                     }
+
+                    .onReceive(dateContainer.model.$now, perform: { v in
+                        print("#### \(v)")
+                        if task.isAlert.wrappedValue == true, task.creationDate.wrappedValue.format("YYYY-MM-dd hh:mm") == Date.now.format("YYYY-MM-dd hh:mm") {
+                            NotificationService.shared.pushNotification(title: task.taskTitle.wrappedValue, body: task.taskMemo.wrappedValue ?? "n/a", seconds: 1, identifier: task.id.uuidString)
+                            task.isAlert.wrappedValue?.toggle()
+                        }
+                    })
             }
             .onChange(of: $dateContainer.model.currentDate.wrappedValue) { _, _ in
                 taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
@@ -68,5 +73,16 @@ struct TasksView: View {
         .onDisappear {
             print("#### TasksView Deinit")
         }
+    }
+
+    func Notify() {
+        let content = UNMutableNotificationContent()
+        content.title = "Message"
+        content.body = "Timer Is Completed Successfully In Background !!!"
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let req = UNNotificationRequest(identifier: "MSG", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
     }
 }

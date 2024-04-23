@@ -5,23 +5,66 @@
 //  Created by 준우의 MacBook 16 on 4/23/24.
 //
 
+import BackgroundTasks
 import UIKit
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    let taskId = "EisenMatrixBackground"
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        // 앱 실행 시 사용자에게 알림 허용 권한을 받음
-        UNUserNotificationCenter.current().delegate = self
+        // Setup notification on launch
+        setupNotification(application: application)
 
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: { _, _ in }
-        )
+        // Register background tasks
+        registerBackgroundTasks()
+
         return true
+    }
+
+    func setupNotification(application: UIApplication) {
+        let notiCenter = UNUserNotificationCenter.current()
+        notiCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, e) in
+            // Optionally handle error or success
+        }
+        notiCenter.delegate = self
+
+        if #available(iOS 11.0, *) {
+            // iOS 11 or later specific code, if necessary
+
+        } else {
+            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+    }
+
+    func registerBackgroundTasks() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: taskId, using: nil) { task in
+            guard let task = task as? BGProcessingTask else { return }
+            self.handleBackgroundTask(task: task)
+        }
+    }
+
+    func handleBackgroundTask(task: BGProcessingTask) {
+        task.setTaskCompleted(success: true)
+    }
+
+    private func submitBackgroundTask() {
+        BGTaskScheduler.shared.getPendingTaskRequests { requests in
+            guard requests.isEmpty else { return }
+            let request = BGProcessingTaskRequest(identifier: self.taskId)
+            request.requiresNetworkConnectivity = false
+            request.requiresExternalPower = false
+
+            do {
+                try BGTaskScheduler.shared.submit(request)
+            } catch {
+                print("Unable to schedule background task: \(error.localizedDescription)")
+            }
+        }
     }
 
     func application(
