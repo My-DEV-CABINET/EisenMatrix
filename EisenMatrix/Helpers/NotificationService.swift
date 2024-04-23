@@ -11,34 +11,28 @@ import UserNotifications
 final class NotificationService {
     static let shared = NotificationService()
 
-    func setAuthorization() {
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: { _, _ in }
-        )
-    }
-
     // PushNotificationHelper.swfit > PushNotificationHelper
-    func pushNotification(title: String, body: String, seconds: Double, identifier: String) {
-        // 1️⃣ 알림 내용, 설정
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = title
-        notificationContent.body = body
+    func pushNotification(date: Date, task: Task) {
+        let content = UNMutableNotificationContent()
+        content.title = task.taskTitle
+        content.body = task.taskMemo ?? "N/A"
+        content.sound = UNNotificationSound.default
 
-        // 2️⃣ 조건(시간, 반복)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
 
-        // 3️⃣ 요청
-        let request = UNNotificationRequest(identifier: identifier,
-                                            content: notificationContent,
-                                            trigger: trigger)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let request = UNNotificationRequest(identifier: task.id.uuidString, content: content, trigger: trigger)
 
-        // 4️⃣ 알림 등록
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("Notification Error: ", error)
+                print("알림을 스케줄링하는 중 에러가 발생했습니다: \(error)")
+            } else {
+                print("알림이 성공적으로 설정되었습니다.")
             }
         }
+    }
+
+    func removeNotification(task: Task) {
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [task.id.uuidString])
     }
 }

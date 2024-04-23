@@ -14,7 +14,6 @@ protocol DateModelAcionsProtocol: AnyObject {
 }
 
 protocol DateModelStateProtocol {
-    var now: Date { get }
     var currentDate: Date { get }
     var currentWeek: [Date.WeekDay] { get }
     var currentMonth: [Date.WeekDay] { get }

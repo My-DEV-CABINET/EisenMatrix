@@ -61,14 +61,17 @@ struct TaskRowView: View {
                     Label(task.creationDate.format("MM.dd hh:mm a"), systemImage: "clock")
                         .font(.caption)
                         .foregroundStyle(.black)
-
                 })
 
                 Image(systemName: task.isAlert ?? false ? "bell" : "bell.slash")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 16, height: 16)
+                    .scaledToFit()
                     .font(.footnote)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Matrix.allCases.first(where: { $0.info == task.taskType })?.color ?? .red)
+                    .padding(.all, 8)
+                    .background(.white)
+                    .clipShape(.circle)
                     .vSpacing(.center)
                     .hSpacing(.trailing)
             }

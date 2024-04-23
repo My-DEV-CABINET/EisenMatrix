@@ -16,28 +16,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        // Setup notification on launch
-        setupNotification(application: application)
-
-        // Register background tasks
+        UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization()
         registerBackgroundTasks()
-
+//        sendNotification(seconds: 5)
         return true
     }
 
-    func setupNotification(application: UIApplication) {
-        let notiCenter = UNUserNotificationCenter.current()
-        notiCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, e) in
-            // Optionally handle error or success
-        }
-        notiCenter.delegate = self
-
-        if #available(iOS 11.0, *) {
-            // iOS 11 or later specific code, if necessary
-
-        } else {
-            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
+    private func requestNotificationAuthorization() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("알림을 보낼 수 있는 권한이 허가되었습니다.")
+            } else {
+                print("알림 권한이 거부되었습니다.")
+            }
         }
     }
 
@@ -45,6 +38,26 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: taskId, using: nil) { task in
             guard let task = task as? BGProcessingTask else { return }
             self.handleBackgroundTask(task: task)
+        }
+    }
+
+    /// Test Send Notification
+    func sendNotification(seconds: Double) {
+        let notificationContent = UNMutableNotificationContent()
+
+        notificationContent.title = "알림 테스트"
+        notificationContent.body = "이것은 알림을 테스트 하는 것이다"
+        notificationContent.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+        let request = UNNotificationRequest(identifier: "testNotification",
+                                            content: notificationContent,
+                                            trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Notification Error: ", error)
+            }
         }
     }
 

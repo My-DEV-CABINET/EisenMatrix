@@ -22,7 +22,7 @@ extension View {
     func isSameDate(_ date1: Date, _ date2: Date) -> Bool {
         return Calendar.current.isDate(date1, inSameDayAs: date2)
     }
-    
+
     func endEditing() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }

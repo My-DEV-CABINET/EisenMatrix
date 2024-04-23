@@ -27,28 +27,16 @@ struct TasksView: View {
                         }
                     }
 
-                    .onAppear(perform: {
-                        if task.isAlert.wrappedValue == true, task.creationDate.wrappedValue.format("YYYY-MM-dd hh:mm") == Date.now.format("YYYY-MM-dd hh:mm") {
-                            NotificationService.shared.pushNotification(title: task.taskTitle.wrappedValue, body: task.taskMemo.wrappedValue ?? "n/a", seconds: 1, identifier: task.id.uuidString)
-                            task.isAlert.wrappedValue?.toggle()
-                        }
-
-                    })
-
                     .onChange(of: task.isAlert.wrappedValue) { oldValue, newValue in
-                        if task.isAlert.wrappedValue == true, task.creationDate.wrappedValue.format("YYYY-MM-dd hh:mm") == Date.now.format("YYYY-MM-dd hh:mm") {
-                            NotificationService.shared.pushNotification(title: task.taskTitle.wrappedValue, body: task.taskMemo.wrappedValue ?? "n/a", seconds: 1, identifier: task.id.uuidString)
-                            task.isAlert.wrappedValue?.toggle()
+                        task.isAlert.wrappedValue?.toggle()
+
+                        guard let isAlert = task.isAlert.wrappedValue else { return }
+                        if isAlert {
+                            NotificationService.shared.pushNotification(date: task.creationDate.wrappedValue, task: task.wrappedValue)
+                        } else {
+                            NotificationService.shared.removeNotification(task: task.wrappedValue)
                         }
                     }
-
-                    .onReceive(dateContainer.model.$now, perform: { v in
-                        print("#### \(v)")
-                        if task.isAlert.wrappedValue == true, task.creationDate.wrappedValue.format("YYYY-MM-dd hh:mm") == Date.now.format("YYYY-MM-dd hh:mm") {
-                            NotificationService.shared.pushNotification(title: task.taskTitle.wrappedValue, body: task.taskMemo.wrappedValue ?? "n/a", seconds: 1, identifier: task.id.uuidString)
-                            task.isAlert.wrappedValue?.toggle()
-                        }
-                    })
             }
             .onChange(of: $dateContainer.model.currentDate.wrappedValue) { _, _ in
                 taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)

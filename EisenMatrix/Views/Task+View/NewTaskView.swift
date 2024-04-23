@@ -140,6 +140,11 @@ struct NewTaskView: View {
                     isAlert: $newTaskContainer.model.isSwitch.wrappedValue
                 )
                 taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
+                
+                if newTaskContainer.model.isSwitch == true {
+                    NotificationService.shared.pushNotification(date: newTaskContainer.model.taskDate, task: task)
+                }
+                
                 dismiss()
             }, label: {
                 Text("Create Task")

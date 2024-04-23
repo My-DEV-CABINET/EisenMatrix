@@ -46,10 +46,6 @@ struct HomeView: View {
                 .presentationBackground(.bar)
         })
 
-        .onAppear {
-            dateContainer.model.timeStart()
-        }
-
         .onDisappear {
             print("#### HomeView Deinit")
 //            dateContainer.model.timeStop()

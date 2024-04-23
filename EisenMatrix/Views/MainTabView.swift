@@ -11,10 +11,6 @@ struct MainTabView: View {
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
 
-    init() {
-        NotificationService.shared.setAuthorization()
-    }
-
     var body: some View {
         TabView {
             HomeView()
@@ -33,14 +29,8 @@ struct MainTabView: View {
                 }
         }
         .font(.headline)
-        .onAppear {
-            dateContainer.model.timeStart()
-            print("#### \(dateContainer.model.now)")
-        }
-
         .onDisappear {
             print("#### MainTabView Deinit")
-            dateContainer.model.timeStop()
         }
     }
 }
