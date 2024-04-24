@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class TaskRowModel: ObservableObject, TaskRowStateProtocol {
+final class TaskRowState: ObservableObject, TaskRowStateProtocol {
     @Published var isRowSelected: Bool
 
     init(isRowSelected: Bool = false) {

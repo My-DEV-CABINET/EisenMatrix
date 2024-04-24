@@ -11,13 +11,27 @@ struct NewTaskView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
-    @ObservedObject private var newTaskContainer: NewTaskContainer<NewTaskModel> // NewTaskView의 상태변화 관리(전담)
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
+    @ObservedObject private var newTaskContainer: NewTaskContainer<NewTaskState> // NewTaskView의 상태변화 관리(전담)
     
-    init() {
-        let newTaskModel = NewTaskModel()
-        newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
+    init(action: Action, task: Task) {
+        if action == Action.add {
+            print("#### \(Action.add)")
+            let newTaskModel = NewTaskState()
+            newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
+        } else {
+            let newTaskModel = NewTaskState(
+                taskTitle: task.taskTitle,
+                taskMemo: task.taskMemo ?? "N/A",
+                taskDate: task.creationDate,
+                taskColor: Matrix.allCases.first(where: { $0.info == task.taskType })?.color ?? .red,
+                isSwitch: task.isAlert ?? false,
+                action: action
+            )
+            newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
+            print("#### \(Action.edit)")
+        }
     }
     
     var body: some View {
@@ -139,7 +153,12 @@ struct NewTaskView: View {
                     creationDate: $newTaskContainer.model.taskDate.wrappedValue,
                     isAlert: $newTaskContainer.model.isSwitch.wrappedValue
                 )
-                taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
+                
+                if newTaskContainer.model.action == Action.add {
+                    taskContainer.intent.addTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
+                } else {
+                    taskContainer.intent.updateTask(currentDate: $dateContainer.model.currentDate, task: taskContainer.model.editTask ?? Task.mockupDatas[0], newTask: task, context: context)
+                }
                 
                 if newTaskContainer.model.isSwitch == true {
                     NotificationService.shared.pushNotification(date: newTaskContainer.model.taskDate, task: task)
@@ -147,7 +166,7 @@ struct NewTaskView: View {
                 
                 dismiss()
             }, label: {
-                Text("Create Task")
+                Text($newTaskContainer.model.action.wrappedValue == Action.add ? "Create Task" : "Edit Task")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .textScale(.secondary)

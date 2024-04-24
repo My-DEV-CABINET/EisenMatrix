@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-final class DateModel: ObservableObject, DateModelStateProtocol {
+final class DateState: ObservableObject, DateModelStateProtocol {
     @Published var currentDate: Date
     @Published var currentWeek: [Date.WeekDay]
     @Published var currentMonth: [Date.WeekDay]
@@ -28,7 +28,7 @@ final class DateModel: ObservableObject, DateModelStateProtocol {
     }
 }
 
-extension DateModel: DateModelAcionsProtocol {
+extension DateState: DateModelAcionsProtocol {
     func fetchCurrentWeek() {
         let newWeek = Date.now.fetchCurrentWeek()
         currentWeek = newWeek

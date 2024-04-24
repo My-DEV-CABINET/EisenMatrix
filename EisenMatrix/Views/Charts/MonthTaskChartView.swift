@@ -11,10 +11,10 @@ import SwiftUI
 
 struct MonthTaskChartView: View {
     @Environment(\.modelContext) private var context
-    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @ObservedObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @ObservedObject private var dateContainer: DateContainer<DateIntent, DateState>
 
-    init(taskContainer: TaskContainer<TaskIntent, TaskModel>, dateContainer: DateContainer<DateIntent, DateModel>) {
+    init(taskContainer: TaskContainer<TaskIntent, TaskState>, dateContainer: DateContainer<DateIntent, DateState>) {
         self.taskContainer = taskContainer
         self.dateContainer = dateContainer
     }

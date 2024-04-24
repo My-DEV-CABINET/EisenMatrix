@@ -10,10 +10,10 @@ import SwiftUI
 struct TaskRowView: View {
     @Environment(\.modelContext) private var context
 
-    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
-    @StateObject private var taskRowContainer: TaskRowContainer<TaskRowModel> = {
-        let taskRowModel = TaskRowModel()
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
+    @StateObject private var taskRowContainer: TaskRowContainer<TaskRowState> = {
+        let taskRowModel = TaskRowState()
         let taskRowContainer = TaskRowContainer(model: taskRowModel, modelChangePublisher: taskRowModel.objectWillChange)
         return taskRowContainer
     }()
@@ -89,12 +89,23 @@ struct TaskRowView: View {
 
             .contextMenu {
                 Button(role: .none) {
+                    /// Edit Task
+                    dateContainer.model.createNewTask.toggle()
+                    taskContainer.model.action = Action.edit
+                    taskContainer.model.editTask = task
+                } label: {
+                    Text("Edit Task")
+                }
+
+                Button(role: .none) {
                     /// Alert Task
                     task.isAlert?.toggle()
 
                 } label: {
                     Text(task.isAlert ?? false ? "Alert Off" : "Alert On")
                 }
+
+                Divider()
 
                 Button(role: .destructive) {
                     /// Deleting Task

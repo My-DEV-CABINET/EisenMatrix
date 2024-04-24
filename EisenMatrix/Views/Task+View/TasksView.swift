@@ -11,8 +11,8 @@ import SwiftUI
 
 struct TasksView: View {
     @Environment(\.modelContext) private var context
-    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {

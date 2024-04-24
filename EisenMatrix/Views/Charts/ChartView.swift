@@ -11,8 +11,8 @@ import SwiftUI
 
 struct ChartView: View {
     @Environment(\.modelContext) private var context
-    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
 
     private let sampleDatas = Task.mockupDatas
 

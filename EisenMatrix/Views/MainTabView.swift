@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateState>
 
     var body: some View {
         TabView {

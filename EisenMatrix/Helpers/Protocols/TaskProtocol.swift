@@ -13,6 +13,8 @@ protocol TaskModelStateProtocol {
     var currentDayTasks: [Task] { get }
     var currentWeekTasks: [Task] { get }
     var currentMonthTasks: [Task] { get }
+    var action: Action { get }
+    var editTask: Task? { get }
 }
 
 protocol TaskModelActionProtocol {
@@ -22,4 +24,5 @@ protocol TaskModelActionProtocol {
     func syncTask(currentDate: Binding<Date>, context: ModelContext?)
     func addTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
     func deleteTask(currentDate: Binding<Date>, task: Task, context: ModelContext?)
+    func updateTask(currentDate: Binding<Date>, task: Task, newTask: Task, context: ModelContext?)
 }

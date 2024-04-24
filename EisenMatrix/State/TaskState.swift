@@ -8,11 +8,13 @@
 import SwiftData
 import SwiftUI
 
-final class TaskModel: ObservableObject, TaskModelStateProtocol {
+final class TaskState: ObservableObject, TaskModelStateProtocol {
     @Published var allTasks: [Task]
     @Published var currentDayTasks: [Task]
     @Published var currentWeekTasks: [Task]
     @Published var currentMonthTasks: [Task]
+    @Published var action: Action = .add
+    @Published var editTask: Task?
     @Query private var items: [Task]
 
     private var testMode: Bool
@@ -34,7 +36,7 @@ final class TaskModel: ObservableObject, TaskModelStateProtocol {
     }
 }
 
-extension TaskModel: TaskModelActionProtocol {
+extension TaskState: TaskModelActionProtocol {
     func fetchCurrentMonthTask(currentMonth: Binding<[Date.WeekDay]>, context: ModelContext?) {
         let calendar = Calendar.current
 
@@ -150,6 +152,25 @@ extension TaskModel: TaskModelActionProtocol {
                 syncTask(currentDate: currentDate, context: context)
             } catch {
                 print("#### Swift Data Save Delete: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    func updateTask(currentDate: Binding<Date>, task: Task, newTask: Task, context: ModelContext?) {
+        if testMode != true {
+            do {
+                task.taskTitle = newTask.taskTitle
+                task.taskMemo = newTask.taskMemo
+                task.taskType = newTask.taskType
+                task.creationDate = newTask.creationDate
+                task.alertDate = newTask.alertDate
+                task.isCompleted = newTask.isCompleted
+                task.isAlert = newTask.isAlert
+
+                try context?.save()
+                syncTask(currentDate: currentDate, context: context)
+            } catch {
+                print("#### Swift Data Update Delete: \(error.localizedDescription)")
             }
         }
     }

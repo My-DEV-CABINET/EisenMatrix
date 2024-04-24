@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskModel>
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskState>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateState>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
@@ -28,6 +28,7 @@ struct HomeView: View {
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {
                 dateContainer.model.createNewTask.toggle()
+                taskContainer.model.action = Action.add
             }, label: {
                 Image(systemName: "plus")
                     .fontWeight(.semibold)
@@ -39,7 +40,7 @@ struct HomeView: View {
         })
 
         .sheet(isPresented: $dateContainer.model.createNewTask, content: {
-            NewTaskView()
+            NewTaskView(action: $taskContainer.model.action.wrappedValue, task: $taskContainer.model.editTask.wrappedValue ?? Task.mockupDatas[0])
                 .presentationDetents([.height(UIScreen.main.bounds.height * 0.66)])
                 .interactiveDismissDisabled()
                 .presentationCornerRadius(30)
@@ -48,7 +49,6 @@ struct HomeView: View {
 
         .onDisappear {
             print("#### HomeView Deinit")
-//            dateContainer.model.timeStop()
         }
     }
 }

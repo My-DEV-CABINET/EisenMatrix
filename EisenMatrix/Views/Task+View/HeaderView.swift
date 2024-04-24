@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateModel>
+    @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateState>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
