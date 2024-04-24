@@ -30,6 +30,8 @@
 		4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5125532BD1A4A700579E2F /* DateIntent.swift */; };
 		4E7E04EF2BD91D64008FE9AE /* FileManageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04EE2BD91D64008FE9AE /* FileManageService.swift */; };
 		4E7E04F12BD93CCE008FE9AE /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F02BD93CCE008FE9AE /* Setting.swift */; };
+		4E7E04F32BD9486A008FE9AE /* SettingStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F22BD9486A008FE9AE /* SettingStateProtocol.swift */; };
+		4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F42BD9495B008FE9AE /* SettingState.swift */; };
 		4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
 		4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF662BD135AD00748AEC /* MainTabView.swift */; };
 		4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* HomeView.swift */; };
@@ -86,6 +88,8 @@
 		4E5125532BD1A4A700579E2F /* DateIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntent.swift; sourceTree = "<group>"; };
 		4E7E04EE2BD91D64008FE9AE /* FileManageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManageService.swift; sourceTree = "<group>"; };
 		4E7E04F02BD93CCE008FE9AE /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		4E7E04F22BD9486A008FE9AE /* SettingStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStateProtocol.swift; sourceTree = "<group>"; };
+		4E7E04F42BD9495B008FE9AE /* SettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingState.swift; sourceTree = "<group>"; };
 		4EA40D372BD764640098981E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4EBFAEC92BD64556009B8B50 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4ECFEF662BD135AD00748AEC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				4E30312B2BD491E400AE2982 /* TaskRowState.swift */,
 				4E2982592BD46D6B00257850 /* NewTaskState.swift */,
 				4E5125512BD1A49900579E2F /* DateState.swift */,
+				4E7E04F42BD9495B008FE9AE /* SettingState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				4EBFAEC92BD64556009B8B50 /* Action.swift */,
 				4E2EF1DD2BD2338100C94463 /* Task.swift */,
 				4E7E04F02BD93CCE008FE9AE /* Setting.swift */,
+				4E7E04F22BD9486A008FE9AE /* SettingStateProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
 				4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */,
 				4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */,
+				4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */,
 				4E29825A2BD46D6B00257850 /* NewTaskState.swift in Sources */,
 				4E51254D2BD19BCC00579E2F /* WeekView.swift in Sources */,
 				4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */,
@@ -431,6 +438,7 @@
 				4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */,
 				4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */,
 				4ECFEF692BD1373F00748AEC /* HomeView.swift in Sources */,
+				4E7E04F32BD9486A008FE9AE /* SettingStateProtocol.swift in Sources */,
 				4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */,
 				4E51254F2BD1A47300579E2F /* DateContainer.swift in Sources */,
 			);

@@ -7,21 +7,24 @@
 
 import SwiftData
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct SettingView: View {
     @Environment(\.modelContext) private var context
     @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
 
-    @State private var settings: [Setting] = Setting.items
-    @State private var fileURL: URL?
-    @State private var openFile = false
+    @StateObject private var settingContainer: SettingContainer<SettingState> = {
+        let settingModel = SettingState()
+        let settingContainer = SettingContainer(model: settingModel, modelChangePublisher: settingModel.objectWillChange)
+        return settingContainer
+    }()
 
     var body: some View {
         NavigationView {
             List {
-                ForEach($settings, id: \.id) { $setting in
-                    SettingRowView(setting: $setting)
+                ForEach($settingContainer.model.settings, id: \.id) { setting in
+                    SettingRowView(setting: setting)
                 }
             }
             .listStyle(.plain)
@@ -36,7 +39,7 @@ struct SettingView: View {
     @ViewBuilder
     func SettingRowView(setting: Binding<Setting>) -> some View {
         HStack(alignment: .center, spacing: 12, content: {
-            Image(systemName: setting.symbolName.wrappedValue)
+            Image(systemName: setting.wrappedValue.symbolName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 30, height: 30)
@@ -46,12 +49,12 @@ struct SettingView: View {
                 .clipShape(.circle)
 
             VStack(alignment: .leading, spacing: 4, content: {
-                Text(setting.title.wrappedValue)
+                Text(setting.wrappedValue.title)
                     .font(.system(size: 20))
                     .font(.headline)
                     .bold()
 
-                Text(setting.description.wrappedValue)
+                Text(setting.wrappedValue.description)
                     .font(.system(size: 16))
                     .font(.caption)
                     .foregroundStyle(Color(UIColor.systemGray))
@@ -59,28 +62,27 @@ struct SettingView: View {
 
             Button(action: {
                 setting.isShow.wrappedValue.toggle()
+                print("#### QWER:: \(setting.isShow.wrappedValue)")
             }, label: {
-                Text(setting.title.wrappedValue)
+                Text(setting.wrappedValue.title)
                     .font(.footnote)
                     .bold()
                     .foregroundStyle(.white)
                     .padding()
-                    .background(Color(setting.color.wrappedValue))
+                    .background(Color(setting.wrappedValue.color))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             .hSpacing(.trailing)
 
         })
-        .alert(isPresented: setting.isShow) {
+
+        .alert(isPresented: setting.isShow, content: {
             Alert(title: Text("Do you really want to \(setting.title.wrappedValue)?"), message: Text(setting.description.wrappedValue), primaryButton: .default(Text("Confirm"), action: {
-                if setting.title.wrappedValue == settings[0].title {
+                if setting.title.wrappedValue == Setting.items[0].title {
                     taskContainer.intent.deleteAllSwiftDatasInContainer(context: context)
-                } else if setting.title.wrappedValue == settings[1].title {
+                } else if setting.title.wrappedValue == Setting.items[1].title {
                     // JSON -> Task Import
-                    openFile.toggle()
-                    guard let url = fileURL else { return }
-                    guard let json = FileManageService.shared.findAndReadJSON(fileURL: url) else { return }
-                    taskContainer.intent.decodeJSONToTask(json: json, context: context)
+                    settingContainer.model.openFile.toggle()
                 } else {
                     // Task -> JSON Export
                     taskContainer.intent.encodeTaskToJSON(tasks: taskContainer.model.allTasks)
@@ -91,13 +93,17 @@ struct SettingView: View {
                     .bold()
                     .foregroundStyle(Color(UIColor.systemRed))
             ))
-        }
+        })
 
-        .fileImporter(isPresented: $openFile, allowedContentTypes: [.data]) { result in
+        .fileImporter(isPresented: $settingContainer.model.openFile, allowedContentTypes: [.data]) { result in
             do {
                 let fileURL = try result.get()
-                self.fileURL = fileURL
-                print("#### \(fileURL)")
+                settingContainer.model.fileURL = fileURL
+
+                guard let url = settingContainer.model.fileURL else { return }
+                guard let json = FileManageService.shared.findAndReadJSON(fileURL: url) else { return }
+
+                taskContainer.intent.decodeJSONToTask(json: json, context: context)
 
             } catch {
                 print("#### \(error.localizedDescription)")

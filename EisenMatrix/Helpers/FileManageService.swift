@@ -27,8 +27,7 @@ final class FileManageService {
         // 저장할 파일명 (확장자 필수)
         let fileName = directoryURL.appendingPathComponent("\(Date.now.format("YYYY-MM-dd hh:mm:ss")) - Eisen Matrix.txt")
         // 파일에 넣을 텍스트
-        
-        print("#### JSON :: \(json)")
+
         let text = json
             
         do {
