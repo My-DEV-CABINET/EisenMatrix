@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
-
+            TaskProcessView()
             ScrollView(.vertical) {
                 VStack {
                     TasksView()
@@ -52,9 +52,3 @@ struct HomeView: View {
         }
     }
 }
-
-// struct TaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//    }
-// }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0638AB2BD8977D0095910F /* TaskProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0638AA2BD8977D0095910F /* TaskProcessView.swift */; };
 		4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */; };
 		4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */; };
 		4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0638AA2BD8977D0095910F /* TaskProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProcessView.swift; sourceTree = "<group>"; };
 		4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTaskChartView.swift; sourceTree = "<group>"; };
 		4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTaskChartView.swift; sourceTree = "<group>"; };
 		4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTaskChartView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				4ECFEF682BD1373F00748AEC /* HomeView.swift */,
 				4E51254A2BD19BAF00579E2F /* HeaderView.swift */,
+				4E0638AA2BD8977D0095910F /* TaskProcessView.swift */,
 				4E51254C2BD19BCC00579E2F /* WeekView.swift */,
 				4ECFEF822BD165B200748AEC /* TasksView.swift */,
 				4ECFEF842BD165D200748AEC /* TaskRowView.swift */,
@@ -415,6 +418,7 @@
 				4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */,
 				4ECFEF7D2BD1615600748AEC /* NewTaskView.swift in Sources */,
 				4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */,
+				4E0638AB2BD8977D0095910F /* TaskProcessView.swift in Sources */,
 				4E30312C2BD491E400AE2982 /* TaskRowState.swift in Sources */,
 				4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */,
 				4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */,
