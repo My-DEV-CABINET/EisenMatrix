@@ -161,6 +161,7 @@ struct NewTaskView: View {
                 }
                 
                 if newTaskContainer.model.isSwitch == true {
+                    NotificationService.shared.removeNotification(task: task)
                     NotificationService.shared.pushNotification(date: newTaskContainer.model.taskDate, task: task)
                 }
                 

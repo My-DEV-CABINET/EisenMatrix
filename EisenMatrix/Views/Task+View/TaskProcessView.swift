@@ -22,7 +22,9 @@ struct TaskProcessView: View {
 
             ProgressView(value: Double(taskContainer.model.currentDayTasks.filter { $0.isCompleted == true }.count) / Double(taskContainer.model.currentDayTasks.count))
                 .foregroundStyle(Color(UIColor.systemBlue))
+                .frame(height: 10.0)
                 .scaleEffect(x: 1, y: 4, anchor: .trailing)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
                 .progressViewStyle(.linear)
         }
         .padding([.leading, .trailing, .bottom], 10)
