@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    let taskId = "EisenMatrixBackground"
+    let taskId = "EisenMatrixBackground" // Info.plist 와 일치
 
     func application(
         _ application: UIApplication,
@@ -19,8 +19,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization()
         registerBackgroundTasks()
+        UNUserNotificationCenter.current().setBadgeCount(NotificationService.count, withCompletionHandler: nil)
 //        sendNotification(seconds: 5)
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        UNUserNotificationCenter.current().setBadgeCount(0)
+        NotificationService.count = 0
     }
 
     private func requestNotificationAuthorization() {
@@ -100,6 +106,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
         // 이 부분은 앱이 열려있는 상태에서도 Local Notification이 오도록 함
         // 제거할 경우 앱이 열려있는 상태에서는 Local Notification이 나타나지 않음 (나머자 부분은 실행됨)
+        UNUserNotificationCenter.current().setBadgeCount(0)
+        NotificationService.count = 0
+
         completionHandler([.list, .banner, .sound])
     }
 
@@ -113,6 +122,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         print("didReceive - identifier: \(identifier)")
         print("didReceive - UserInfo: \(userInfo)")
+
+        UNUserNotificationCenter.current().setBadgeCount(0)
+        NotificationService.count = 0
 
         completionHandler()
     }

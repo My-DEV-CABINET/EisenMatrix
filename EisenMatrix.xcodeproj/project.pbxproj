@@ -250,9 +250,9 @@
 		4ECFEF872BD16E1500748AEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E2EF1DD2BD2338100C94463 /* Task.swift */,
 				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
 				4EBFAEC92BD64556009B8B50 /* Action.swift */,
-				4E2EF1DD2BD2338100C94463 /* Task.swift */,
 				4E7E04F02BD93CCE008FE9AE /* Setting.swift */,
 			);
 			path = Model;

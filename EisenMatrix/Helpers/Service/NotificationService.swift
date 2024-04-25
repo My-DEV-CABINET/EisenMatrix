@@ -5,19 +5,22 @@
 //  Created by 준우의 MacBook 16 on 4/23/24.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
 final class NotificationService {
     static let shared = NotificationService()
+    static var count = 0
 
     // PushNotificationHelper.swfit > PushNotificationHelper
     func pushNotification(date: Date, task: Task) {
         let content = UNMutableNotificationContent()
         content.title = task.taskTitle
         content.body = task.taskMemo ?? "N/A"
+        content.badge = NSNumber(value: NotificationService.count + 1)
         content.sound = UNNotificationSound.default
 
+        NotificationService.count += 1
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
