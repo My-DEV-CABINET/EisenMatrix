@@ -33,6 +33,19 @@
 		4E7E04F32BD9486A008FE9AE /* SettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F22BD9486A008FE9AE /* SettingProtocol.swift */; };
 		4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F42BD9495B008FE9AE /* SettingState.swift */; };
 		4E88EEB92BD9E7A600177DA1 /* SettingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEB82BD9E7A600177DA1 /* SettingContainer.swift */; };
+		4E88EEC82BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */; };
+		4E88EECA2BDA1C1E00177DA1 /* EisenMatrixWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */; };
+		4E88EECC2BDA1C2000177DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */; };
+		4E88EED02BDA1C2000177DA1 /* EisenMatrixWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E88EED72BDA1C8E00177DA1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EF1DD2BD2338100C94463 /* Task.swift */; };
+		4E88EEE02BDA21DF00177DA1 /* EisenMatrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */; };
+		4E88EEE12BDA221800177DA1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */; };
+		4E88EEE42BDA221B00177DA1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */; };
+		4E88EEE62BDA22F700177DA1 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
+		4E88EEE72BDA230200177DA1 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
+		4E88EEE82BDA230C00177DA1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */; };
+		4E88EEE92BDA231700177DA1 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF712BD15CB500748AEC /* Matrix.swift */; };
+		4E88EEEA2BDA232800177DA1 /* EisenMatrixWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */; };
 		4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
 		4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF662BD135AD00748AEC /* MainTabView.swift */; };
 		4ECFEF692BD1373F00748AEC /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* TaskView.swift */; };
@@ -48,7 +61,6 @@
 		4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF842BD165D200748AEC /* TaskRowView.swift */; };
 		4ECFEF8B2BD16E4A00748AEC /* TaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8A2BD16E4A00748AEC /* TaskState.swift */; };
 		4ECFEF8D2BD16E5B00748AEC /* TaskIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8C2BD16E5B00748AEC /* TaskIntent.swift */; };
-		4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */; };
 		4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98C2BC3F0940015ED95 /* ContentView.swift */; };
 		4ED7D98F2BC3F0950015ED95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */; };
 		4ED7D9922BC3F0950015ED95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */; };
@@ -56,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4E88EECE2BDA1C2000177DA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E88EEBF2BDA1C1E00177DA1;
+			remoteInfo = EisenMatrixWidgetExtension;
+		};
 		4ED7D9982BC3F0950015ED95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
@@ -64,6 +83,20 @@
 			remoteInfo = EisenMatrix;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E88EED42BDA1C2000177DA1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4E88EED02BDA1C2000177DA1 /* EisenMatrixWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E0638AA2BD8977D0095910F /* TaskProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProcessView.swift; sourceTree = "<group>"; };
@@ -92,6 +125,15 @@
 		4E7E04F22BD9486A008FE9AE /* SettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocol.swift; sourceTree = "<group>"; };
 		4E7E04F42BD9495B008FE9AE /* SettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingState.swift; sourceTree = "<group>"; };
 		4E88EEB82BD9E7A600177DA1 /* SettingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainer.swift; sourceTree = "<group>"; };
+		4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EisenMatrixWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixWidgetBundle.swift; sourceTree = "<group>"; };
+		4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixWidget.swift; sourceTree = "<group>"; };
+		4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E88EECD2BDA1C2000177DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E88EED92BDA1FB700177DA1 /* EisenMatrix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EisenMatrix.entitlements; sourceTree = "<group>"; };
+		4E88EEDA2BDA200A00177DA1 /* EisenMatrixWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EisenMatrixWidgetExtension.entitlements; sourceTree = "<group>"; };
 		4EA40D372BD764640098981E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4EBFAEC92BD64556009B8B50 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4ECFEF662BD135AD00748AEC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -118,6 +160,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E88EEBD2BDA1C1E00177DA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EEE12BDA221800177DA1 /* SwiftUI.framework in Frameworks */,
+				4E88EEE42BDA221B00177DA1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9842BC3F0940015ED95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +261,26 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4E88EEC12BDA1C1E00177DA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */,
+				4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E88EEC62BDA1C1E00177DA1 /* EisenMatrixWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */,
+				4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */,
+				4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */,
+				4E88EECD2BDA1C2000177DA1 /* Info.plist */,
+			);
+			path = EisenMatrixWidget;
+			sourceTree = "<group>";
+		};
 		4ECFEF6E2BD1375200748AEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,8 +341,11 @@
 		4ED7D97E2BC3F0940015ED95 = {
 			isa = PBXGroup;
 			children = (
+				4E88EEDA2BDA200A00177DA1 /* EisenMatrixWidgetExtension.entitlements */,
 				4ED7D9892BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D99A2BC3F0950015ED95 /* EisenMatrixTests */,
+				4E88EEC62BDA1C1E00177DA1 /* EisenMatrixWidget */,
+				4E88EEC12BDA1C1E00177DA1 /* Frameworks */,
 				4ED7D9882BC3F0940015ED95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -281,6 +355,7 @@
 			children = (
 				4ED7D9872BC3F0940015ED95 /* EisenMatrix.app */,
 				4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */,
+				4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +363,7 @@
 		4ED7D9892BC3F0940015ED95 /* EisenMatrix */ = {
 			isa = PBXGroup;
 			children = (
+				4E88EED92BDA1FB700177DA1 /* EisenMatrix.entitlements */,
 				4E88EEBB2BD9E7FC00177DA1 /* Resources */,
 				4ECFEF732BD15FE000748AEC /* Helpers */,
 				4E5125502BD1A48000579E2F /* Containers */,
@@ -321,6 +397,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E88EED12BDA1C2000177DA1 /* Build configuration list for PBXNativeTarget "EisenMatrixWidgetExtension" */;
+			buildPhases = (
+				4E88EEBC2BDA1C1E00177DA1 /* Sources */,
+				4E88EEBD2BDA1C1E00177DA1 /* Frameworks */,
+				4E88EEBE2BDA1C1E00177DA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EisenMatrixWidgetExtension;
+			productName = EisenMatrixWidgetExtension;
+			productReference = 4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4ED7D9862BC3F0940015ED95 /* EisenMatrix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ED7D9AB2BC3F0950015ED95 /* Build configuration list for PBXNativeTarget "EisenMatrix" */;
@@ -328,10 +421,12 @@
 				4ED7D9832BC3F0940015ED95 /* Sources */,
 				4ED7D9842BC3F0940015ED95 /* Frameworks */,
 				4ED7D9852BC3F0940015ED95 /* Resources */,
+				4E88EED42BDA1C2000177DA1 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E88EECF2BDA1C2000177DA1 /* PBXTargetDependency */,
 			);
 			name = EisenMatrix;
 			productName = EisenMatrix;
@@ -366,6 +461,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					4E88EEBF2BDA1C1E00177DA1 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					4ED7D9862BC3F0940015ED95 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -390,11 +488,20 @@
 			targets = (
 				4ED7D9862BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D9962BC3F0950015ED95 /* EisenMatrixTests */,
+				4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E88EEBE2BDA1C1E00177DA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EECC2BDA1C2000177DA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9852BC3F0940015ED95 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +521,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E88EEBC2BDA1C1E00177DA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EEE92BDA231700177DA1 /* Matrix.swift in Sources */,
+				4E88EEC82BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift in Sources */,
+				4E88EED72BDA1C8E00177DA1 /* Task.swift in Sources */,
+				4E88EEE62BDA22F700177DA1 /* TaskProtocol.swift in Sources */,
+				4E88EEE72BDA230200177DA1 /* Action.swift in Sources */,
+				4E88EECA2BDA1C1E00177DA1 /* EisenMatrixWidget.swift in Sources */,
+				4E88EEE82BDA230C00177DA1 /* Date+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9832BC3F0940015ED95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,11 +548,13 @@
 				4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */,
 				4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */,
 				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
+				4E88EEE02BDA21DF00177DA1 /* EisenMatrixApp.swift in Sources */,
 				4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */,
 				4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */,
 				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
 				4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */,
 				4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */,
+				4E88EEEA2BDA232800177DA1 /* EisenMatrixWidget.swift in Sources */,
 				4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */,
 				4E29825A2BD46D6B00257850 /* NewTaskState.swift in Sources */,
 				4E51254D2BD19BCC00579E2F /* TaskWeekView.swift in Sources */,
@@ -440,7 +563,6 @@
 				4ECFEF8D2BD16E5B00748AEC /* TaskIntent.swift in Sources */,
 				4E29825C2BD46E2600257850 /* NewTaskContainer.swift in Sources */,
 				4E5125522BD1A49900579E2F /* DateState.swift in Sources */,
-				4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */,
 				4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */,
 				4E7E04EF2BD91D64008FE9AE /* FileManageService.swift in Sources */,
 				4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */,
@@ -475,6 +597,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4E88EECF2BDA1C2000177DA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */;
+			targetProxy = 4E88EECE2BDA1C2000177DA1 /* PBXContainerItemProxy */;
+		};
 		4ED7D9992BC3F0950015ED95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4ED7D9862BC3F0940015ED95 /* EisenMatrix */;
@@ -483,6 +610,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4E88EED22BDA1C2000177DA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MN45GZSDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EisenMatrixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix.EisenMatrixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E88EED32BDA1C2000177DA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MN45GZSDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EisenMatrixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix.EisenMatrixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4ED7D9A92BC3F0950015ED95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -605,8 +790,10 @@
 		4ED7D9AC2BC3F0950015ED95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrix/EisenMatrix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EisenMatrix/Preview Content\"";
@@ -640,8 +827,10 @@
 		4ED7D9AD2BC3F0950015ED95 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrix/EisenMatrix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EisenMatrix/Preview Content\"";
@@ -723,6 +912,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E88EED12BDA1C2000177DA1 /* Build configuration list for PBXNativeTarget "EisenMatrixWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E88EED22BDA1C2000177DA1 /* Debug */,
+				4E88EED32BDA1C2000177DA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4ED7D9822BC3F0940015ED95 /* Build configuration list for PBXProject "EisenMatrix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

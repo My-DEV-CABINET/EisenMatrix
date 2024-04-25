@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TaskRowView: View {
     @Environment(\.modelContext) private var context
+    @Environment(\.scenePhase) private var phase
 
     @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
@@ -39,6 +41,7 @@ struct TaskRowView: View {
                         .onTapGesture {
                             withAnimation(.snappy) {
                                 task.isCompleted.toggle()
+                                WidgetCenter.shared.reloadAllTimelines()
                             }
                         }
                 }
@@ -110,12 +113,18 @@ struct TaskRowView: View {
                 Button(role: .destructive) {
                     /// Deleting Task
                     taskContainer.intent.deleteTask(currentDate: $dateContainer.model.currentDate, task: task, context: context)
+                    WidgetCenter.shared.reloadAllTimelines()
 
                 } label: {
                     Text("Delete Task")
                 }
             }
             .offset(y: -8)
+        }
+
+        .onChange(of: phase) { oldValue, newValue in
+            task.isCompleted = task.isCompleted
+            WidgetCenter.shared.reloadAllTimelines()
         }
 
         .onDisappear {

@@ -8,6 +8,7 @@
 import Combine
 import SwiftData
 import SwiftUI
+import WidgetKit
 
 struct TaskListView: View {
     @Environment(\.modelContext) private var context
@@ -40,6 +41,7 @@ struct TaskListView: View {
             }
             .onChange(of: $dateContainer.model.currentDate.wrappedValue) { _, _ in
                 taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
         .padding([.vertical, .leading], 15)
@@ -54,9 +56,10 @@ struct TaskListView: View {
             }
         }
 
-        .onAppear(perform: {
+        .task {
             taskContainer.intent.syncTask(currentDate: $dateContainer.model.currentDate, context: context)
-        })
+            WidgetCenter.shared.reloadAllTimelines()
+        }
 
         .onDisappear {
             print("#### TasksView Deinit")

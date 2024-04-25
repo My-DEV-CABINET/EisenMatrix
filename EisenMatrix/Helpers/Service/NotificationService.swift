@@ -15,7 +15,7 @@ final class NotificationService {
     // PushNotificationHelper.swfit > PushNotificationHelper
     func pushNotification(date: Date, task: Task) {
         let content = UNMutableNotificationContent()
-        content.title = task.taskTitle
+        content.title = "\(switchNotificationSymbol(for: task.taskType)): " + task.taskTitle
         content.body = task.taskMemo ?? "N/A"
         content.badge = NSNumber(value: NotificationService.count + 1)
         content.sound = UNNotificationSound.default
@@ -37,5 +37,20 @@ final class NotificationService {
 
     func removeNotification(task: Task) {
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [task.id.uuidString])
+    }
+
+    func switchNotificationSymbol(for data: String) -> String {
+        switch data {
+        case Matrix.Do.info:
+            return "🟢"
+        case Matrix.Decide.info:
+            return "🔵"
+        case Matrix.Delegate.info:
+            return "🟠"
+        case Matrix.Delete.info:
+            return "🔴"
+        default:
+            return "n/a"
+        }
     }
 }
