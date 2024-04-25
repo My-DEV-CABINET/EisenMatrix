@@ -19,12 +19,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization()
         registerBackgroundTasks()
-        UNUserNotificationCenter.current().setBadgeCount(NotificationService.count, withCompletionHandler: nil)
 //        sendNotification(seconds: 5)
         return true
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    private func notificationBadgeReset() {
         UNUserNotificationCenter.current().setBadgeCount(0)
         NotificationService.count = 0
     }
@@ -106,8 +105,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
         // 이 부분은 앱이 열려있는 상태에서도 Local Notification이 오도록 함
         // 제거할 경우 앱이 열려있는 상태에서는 Local Notification이 나타나지 않음 (나머자 부분은 실행됨)
-        UNUserNotificationCenter.current().setBadgeCount(0)
-        NotificationService.count = 0
+        notificationBadgeReset()
 
         completionHandler([.list, .banner, .sound])
     }
@@ -123,8 +121,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("didReceive - identifier: \(identifier)")
         print("didReceive - UserInfo: \(userInfo)")
 
-        UNUserNotificationCenter.current().setBadgeCount(0)
-        NotificationService.count = 0
+        notificationBadgeReset()
 
         completionHandler()
     }

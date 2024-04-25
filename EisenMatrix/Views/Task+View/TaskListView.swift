@@ -33,6 +33,7 @@ struct TaskListView: View {
 
                         guard let isAlert = task.isAlert.wrappedValue else { return }
                         if isAlert {
+                            NotificationService.shared.removeNotification(task: task.wrappedValue)
                             NotificationService.shared.pushNotification(date: task.creationDate.wrappedValue, task: task.wrappedValue)
                         } else {
                             NotificationService.shared.removeNotification(task: task.wrappedValue)

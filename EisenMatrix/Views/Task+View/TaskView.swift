@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskView: View {
+    @Environment(\.scenePhase) private var phase
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateState>
 
@@ -49,6 +50,11 @@ struct TaskView: View {
 
         .onDisappear {
             print("#### HomeView Deinit")
+        }
+
+        .onChange(of: phase) { oldValue, newValue in
+            UNUserNotificationCenter.current().setBadgeCount(0)
+            NotificationService.count = 0
         }
     }
 }
