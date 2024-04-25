@@ -7,7 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */; };
+		4E0638AB2BD8977D0095910F /* TaskProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0638AA2BD8977D0095910F /* TaskProcessView.swift */; };
+		4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */; };
+		4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */; };
+		4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */; };
+		4E1559FC2BD6B56A00EFB6A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */; };
+		4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */; };
+		4E155A002BD6BDE600EFB6A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */; };
+		4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
+		4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982552BD46B8100257850 /* DateProtocol.swift */; };
+		4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */; };
+		4E29825A2BD46D6B00257850 /* NewTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982592BD46D6B00257850 /* NewTaskState.swift */; };
+		4E29825C2BD46E2600257850 /* NewTaskContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29825B2BD46E2600257850 /* NewTaskContainer.swift */; };
+		4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EF1DD2BD2338100C94463 /* Task.swift */; };
+		4E30312A2BD4914700AE2982 /* TaskRowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3031292BD4914700AE2982 /* TaskRowProtocol.swift */; };
+		4E30312C2BD491E400AE2982 /* TaskRowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30312B2BD491E400AE2982 /* TaskRowState.swift */; };
+		4E30312E2BD4922F00AE2982 /* TaskRowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E30312D2BD4922F00AE2982 /* TaskRowContainer.swift */; };
+		4E51254B2BD19BAF00579E2F /* TaskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254A2BD19BAF00579E2F /* TaskHeaderView.swift */; };
+		4E51254D2BD19BCC00579E2F /* TaskWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254C2BD19BCC00579E2F /* TaskWeekView.swift */; };
+		4E51254F2BD1A47300579E2F /* DateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51254E2BD1A47300579E2F /* DateContainer.swift */; };
+		4E5125522BD1A49900579E2F /* DateState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5125512BD1A49900579E2F /* DateState.swift */; };
+		4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5125532BD1A4A700579E2F /* DateIntent.swift */; };
+		4E7E04EF2BD91D64008FE9AE /* FileManageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04EE2BD91D64008FE9AE /* FileManageService.swift */; };
+		4E7E04F12BD93CCE008FE9AE /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F02BD93CCE008FE9AE /* Setting.swift */; };
+		4E7E04F32BD9486A008FE9AE /* SettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F22BD9486A008FE9AE /* SettingProtocol.swift */; };
+		4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E04F42BD9495B008FE9AE /* SettingState.swift */; };
+		4E88EEB92BD9E7A600177DA1 /* SettingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEB82BD9E7A600177DA1 /* SettingContainer.swift */; };
+		4E88EEC82BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */; };
+		4E88EECA2BDA1C1E00177DA1 /* EisenMatrixWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */; };
+		4E88EECC2BDA1C2000177DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */; };
+		4E88EED02BDA1C2000177DA1 /* EisenMatrixWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E88EED72BDA1C8E00177DA1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EF1DD2BD2338100C94463 /* Task.swift */; };
+		4E88EEE02BDA21DF00177DA1 /* EisenMatrixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */; };
+		4E88EEE12BDA221800177DA1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */; };
+		4E88EEE42BDA221B00177DA1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */; };
+		4E88EEE62BDA22F700177DA1 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2982532BD46B6700257850 /* TaskProtocol.swift */; };
+		4E88EEE72BDA230200177DA1 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
+		4E88EEE82BDA230C00177DA1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */; };
+		4E88EEE92BDA231700177DA1 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF712BD15CB500748AEC /* Matrix.swift */; };
+		4E88EEEA2BDA232800177DA1 /* EisenMatrixWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */; };
+		4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFAEC92BD64556009B8B50 /* Action.swift */; };
+		4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF662BD135AD00748AEC /* MainTabView.swift */; };
+		4ECFEF692BD1373F00748AEC /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF682BD1373F00748AEC /* TaskView.swift */; };
+		4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6A2BD1374600748AEC /* ChartView.swift */; };
+		4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6C2BD1374A00748AEC /* SettingView.swift */; };
+		4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */; };
+		4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF712BD15CB500748AEC /* Matrix.swift */; };
+		4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF742BD15FF700748AEC /* View+Extensions.swift */; };
+		4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */; };
+		4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF782BD160F600748AEC /* OffsetKey.swift */; };
+		4ECFEF7D2BD1615600748AEC /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */; };
+		4ECFEF832BD165B200748AEC /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF822BD165B200748AEC /* TaskListView.swift */; };
+		4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF842BD165D200748AEC /* TaskRowView.swift */; };
+		4ECFEF8B2BD16E4A00748AEC /* TaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8A2BD16E4A00748AEC /* TaskState.swift */; };
+		4ECFEF8D2BD16E5B00748AEC /* TaskIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECFEF8C2BD16E5B00748AEC /* TaskIntent.swift */; };
 		4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED7D98C2BC3F0940015ED95 /* ContentView.swift */; };
 		4ED7D98F2BC3F0950015ED95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */; };
 		4ED7D9922BC3F0950015ED95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */; };
@@ -15,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4E88EECE2BDA1C2000177DA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E88EEBF2BDA1C1E00177DA1;
+			remoteInfo = EisenMatrixWidgetExtension;
+		};
 		4ED7D9982BC3F0950015ED95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4ED7D97F2BC3F0940015ED95 /* Project object */;
@@ -24,7 +84,72 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E88EED42BDA1C2000177DA1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4E88EED02BDA1C2000177DA1 /* EisenMatrixWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4E0638AA2BD8977D0095910F /* TaskProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProcessView.swift; sourceTree = "<group>"; };
+		4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTaskChartView.swift; sourceTree = "<group>"; };
+		4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTaskChartView.swift; sourceTree = "<group>"; };
+		4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTaskChartView.swift; sourceTree = "<group>"; };
+		4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4E2982532BD46B6700257850 /* TaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProtocol.swift; sourceTree = "<group>"; };
+		4E2982552BD46B8100257850 /* DateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProtocol.swift; sourceTree = "<group>"; };
+		4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskProtocol.swift; sourceTree = "<group>"; };
+		4E2982592BD46D6B00257850 /* NewTaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskState.swift; sourceTree = "<group>"; };
+		4E29825B2BD46E2600257850 /* NewTaskContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskContainer.swift; sourceTree = "<group>"; };
+		4E2EF1DD2BD2338100C94463 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4E3031292BD4914700AE2982 /* TaskRowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowProtocol.swift; sourceTree = "<group>"; };
+		4E30312B2BD491E400AE2982 /* TaskRowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowState.swift; sourceTree = "<group>"; };
+		4E30312D2BD4922F00AE2982 /* TaskRowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowContainer.swift; sourceTree = "<group>"; };
+		4E51254A2BD19BAF00579E2F /* TaskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderView.swift; sourceTree = "<group>"; };
+		4E51254C2BD19BCC00579E2F /* TaskWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskWeekView.swift; sourceTree = "<group>"; };
+		4E51254E2BD1A47300579E2F /* DateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContainer.swift; sourceTree = "<group>"; };
+		4E5125512BD1A49900579E2F /* DateState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateState.swift; sourceTree = "<group>"; };
+		4E5125532BD1A4A700579E2F /* DateIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntent.swift; sourceTree = "<group>"; };
+		4E7E04EE2BD91D64008FE9AE /* FileManageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManageService.swift; sourceTree = "<group>"; };
+		4E7E04F02BD93CCE008FE9AE /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		4E7E04F22BD9486A008FE9AE /* SettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocol.swift; sourceTree = "<group>"; };
+		4E7E04F42BD9495B008FE9AE /* SettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingState.swift; sourceTree = "<group>"; };
+		4E88EEB82BD9E7A600177DA1 /* SettingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainer.swift; sourceTree = "<group>"; };
+		4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EisenMatrixWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixWidgetBundle.swift; sourceTree = "<group>"; };
+		4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixWidget.swift; sourceTree = "<group>"; };
+		4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E88EECD2BDA1C2000177DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E88EED92BDA1FB700177DA1 /* EisenMatrix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EisenMatrix.entitlements; sourceTree = "<group>"; };
+		4E88EEDA2BDA200A00177DA1 /* EisenMatrixWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EisenMatrixWidgetExtension.entitlements; sourceTree = "<group>"; };
+		4EA40D372BD764640098981E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4EBFAEC92BD64556009B8B50 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		4ECFEF662BD135AD00748AEC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		4ECFEF682BD1373F00748AEC /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		4ECFEF6A2BD1374600748AEC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		4ECFEF6C2BD1374A00748AEC /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContainer.swift; sourceTree = "<group>"; };
+		4ECFEF712BD15CB500748AEC /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		4ECFEF742BD15FF700748AEC /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		4ECFEF782BD160F600748AEC /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
+		4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		4ECFEF822BD165B200748AEC /* TaskListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		4ECFEF842BD165D200748AEC /* TaskRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		4ECFEF8A2BD16E4A00748AEC /* TaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskState.swift; sourceTree = "<group>"; };
+		4ECFEF8C2BD16E5B00748AEC /* TaskIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIntent.swift; sourceTree = "<group>"; };
 		4ED7D9872BC3F0940015ED95 /* EisenMatrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EisenMatrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixApp.swift; sourceTree = "<group>"; };
 		4ED7D98C2BC3F0940015ED95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,10 +157,18 @@
 		4ED7D9912BC3F0950015ED95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EisenMatrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED7D99B2BC3F0950015ED95 /* EisenMatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixTests.swift; sourceTree = "<group>"; };
-		4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisenMatrixUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E88EEBD2BDA1C1E00177DA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EEE12BDA221800177DA1 /* SwiftUI.framework in Frameworks */,
+				4E88EEE42BDA221B00177DA1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9842BC3F0940015ED95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,12 +186,166 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0B3AD12BD5E68300E9DD70 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF8A2BD16E4A00748AEC /* TaskState.swift */,
+				4E30312B2BD491E400AE2982 /* TaskRowState.swift */,
+				4E2982592BD46D6B00257850 /* NewTaskState.swift */,
+				4E5125512BD1A49900579E2F /* DateState.swift */,
+				4E7E04F42BD9495B008FE9AE /* SettingState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		4E2982512BD46B3200257850 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF6A2BD1374600748AEC /* ChartView.swift */,
+				4E0B3ACB2BD5DA2900E9DD70 /* TotalTaskChartView.swift */,
+				4E0B3ACD2BD5DAAF00E9DD70 /* WeekTaskChartView.swift */,
+				4E0B3ACF2BD5DB0500E9DD70 /* MonthTaskChartView.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		4E2982522BD46B3E00257850 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF6C2BD1374A00748AEC /* SettingView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4E3031282BD4906B00AE2982 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4E2982532BD46B6700257850 /* TaskProtocol.swift */,
+				4E3031292BD4914700AE2982 /* TaskRowProtocol.swift */,
+				4E2982572BD46CDC00257850 /* NewTaskProtocol.swift */,
+				4E2982552BD46B8100257850 /* DateProtocol.swift */,
+				4E7E04F22BD9486A008FE9AE /* SettingProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4E5125502BD1A48000579E2F /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF6F2BD13B9600748AEC /* TaskContainer.swift */,
+				4E30312D2BD4922F00AE2982 /* TaskRowContainer.swift */,
+				4E29825B2BD46E2600257850 /* NewTaskContainer.swift */,
+				4E51254E2BD1A47300579E2F /* DateContainer.swift */,
+				4E88EEB82BD9E7A600177DA1 /* SettingContainer.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		4E88EEBA2BD9E7EC00177DA1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4E1559FB2BD6B56A00EFB6A1 /* NotificationService.swift */,
+				4E7E04EE2BD91D64008FE9AE /* FileManageService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4E88EEBB2BD9E7FC00177DA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E1559FD2BD6BDA300EFB6A1 /* AppDelegate.swift */,
+				4E1559FF2BD6BDE600EFB6A1 /* SceneDelegate.swift */,
+				4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */,
+				4ED7D98C2BC3F0940015ED95 /* ContentView.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4E88EEC12BDA1C1E00177DA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E88EEC22BDA1C1E00177DA1 /* WidgetKit.framework */,
+				4E88EEC42BDA1C1E00177DA1 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E88EEC62BDA1C1E00177DA1 /* EisenMatrixWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4E88EEC72BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift */,
+				4E88EEC92BDA1C1E00177DA1 /* EisenMatrixWidget.swift */,
+				4E88EECB2BDA1C2000177DA1 /* Assets.xcassets */,
+				4E88EECD2BDA1C2000177DA1 /* Info.plist */,
+			);
+			path = EisenMatrixWidget;
+			sourceTree = "<group>";
+		};
+		4ECFEF6E2BD1375200748AEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF662BD135AD00748AEC /* MainTabView.swift */,
+				4ECFEF862BD16DFF00748AEC /* Task+View */,
+				4E2982512BD46B3200257850 /* Charts */,
+				4E2982522BD46B3E00257850 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4ECFEF732BD15FE000748AEC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF742BD15FF700748AEC /* View+Extensions.swift */,
+				4ECFEF762BD160CB00748AEC /* Date+Extensions.swift */,
+				4ECFEF782BD160F600748AEC /* OffsetKey.swift */,
+				4E88EEBA2BD9E7EC00177DA1 /* Service */,
+				4E3031282BD4906B00AE2982 /* Protocols */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4ECFEF862BD16DFF00748AEC /* Task+View */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF682BD1373F00748AEC /* TaskView.swift */,
+				4E51254A2BD19BAF00579E2F /* TaskHeaderView.swift */,
+				4E0638AA2BD8977D0095910F /* TaskProcessView.swift */,
+				4E51254C2BD19BCC00579E2F /* TaskWeekView.swift */,
+				4ECFEF822BD165B200748AEC /* TaskListView.swift */,
+				4ECFEF842BD165D200748AEC /* TaskRowView.swift */,
+				4ECFEF7A2BD1615600748AEC /* NewTaskView.swift */,
+			);
+			path = "Task+View";
+			sourceTree = "<group>";
+		};
+		4ECFEF872BD16E1500748AEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E2EF1DD2BD2338100C94463 /* Task.swift */,
+				4ECFEF712BD15CB500748AEC /* Matrix.swift */,
+				4EBFAEC92BD64556009B8B50 /* Action.swift */,
+				4E7E04F02BD93CCE008FE9AE /* Setting.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ECFEF8E2BD16E8A00748AEC /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				4ECFEF8C2BD16E5B00748AEC /* TaskIntent.swift */,
+				4E5125532BD1A4A700579E2F /* DateIntent.swift */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
 		4ED7D97E2BC3F0940015ED95 = {
 			isa = PBXGroup;
 			children = (
+				4E88EEDA2BDA200A00177DA1 /* EisenMatrixWidgetExtension.entitlements */,
 				4ED7D9892BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D99A2BC3F0950015ED95 /* EisenMatrixTests */,
-				4ED7D9A42BC3F0950015ED95 /* EisenMatrixUITests */,
+				4E88EEC62BDA1C1E00177DA1 /* EisenMatrixWidget */,
+				4E88EEC12BDA1C1E00177DA1 /* Frameworks */,
 				4ED7D9882BC3F0940015ED95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +355,7 @@
 			children = (
 				4ED7D9872BC3F0940015ED95 /* EisenMatrix.app */,
 				4ED7D9972BC3F0950015ED95 /* EisenMatrixTests.xctest */,
+				4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,9 +363,16 @@
 		4ED7D9892BC3F0940015ED95 /* EisenMatrix */ = {
 			isa = PBXGroup;
 			children = (
-				4ED7D98A2BC3F0940015ED95 /* EisenMatrixApp.swift */,
-				4ED7D98C2BC3F0940015ED95 /* ContentView.swift */,
+				4E88EED92BDA1FB700177DA1 /* EisenMatrix.entitlements */,
+				4E88EEBB2BD9E7FC00177DA1 /* Resources */,
+				4ECFEF732BD15FE000748AEC /* Helpers */,
+				4E5125502BD1A48000579E2F /* Containers */,
+				4ECFEF8E2BD16E8A00748AEC /* Intent */,
+				4E0B3AD12BD5E68300E9DD70 /* State */,
+				4ECFEF872BD16E1500748AEC /* Model */,
+				4ECFEF6E2BD1375200748AEC /* Views */,
 				4ED7D98E2BC3F0950015ED95 /* Assets.xcassets */,
+				4EA40D372BD764640098981E /* Info.plist */,
 				4ED7D9902BC3F0950015ED95 /* Preview Content */,
 			);
 			path = EisenMatrix;
@@ -99,17 +394,26 @@
 			path = EisenMatrixTests;
 			sourceTree = "<group>";
 		};
-		4ED7D9A42BC3F0950015ED95 /* EisenMatrixUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4ED7D9A52BC3F0950015ED95 /* EisenMatrixUITests.swift */,
-			);
-			path = EisenMatrixUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E88EED12BDA1C2000177DA1 /* Build configuration list for PBXNativeTarget "EisenMatrixWidgetExtension" */;
+			buildPhases = (
+				4E88EEBC2BDA1C1E00177DA1 /* Sources */,
+				4E88EEBD2BDA1C1E00177DA1 /* Frameworks */,
+				4E88EEBE2BDA1C1E00177DA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EisenMatrixWidgetExtension;
+			productName = EisenMatrixWidgetExtension;
+			productReference = 4E88EEC02BDA1C1E00177DA1 /* EisenMatrixWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4ED7D9862BC3F0940015ED95 /* EisenMatrix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ED7D9AB2BC3F0950015ED95 /* Build configuration list for PBXNativeTarget "EisenMatrix" */;
@@ -117,10 +421,12 @@
 				4ED7D9832BC3F0940015ED95 /* Sources */,
 				4ED7D9842BC3F0940015ED95 /* Frameworks */,
 				4ED7D9852BC3F0940015ED95 /* Resources */,
+				4E88EED42BDA1C2000177DA1 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E88EECF2BDA1C2000177DA1 /* PBXTargetDependency */,
 			);
 			name = EisenMatrix;
 			productName = EisenMatrix;
@@ -155,6 +461,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					4E88EEBF2BDA1C1E00177DA1 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					4ED7D9862BC3F0940015ED95 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -179,11 +488,20 @@
 			targets = (
 				4ED7D9862BC3F0940015ED95 /* EisenMatrix */,
 				4ED7D9962BC3F0950015ED95 /* EisenMatrixTests */,
+				4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E88EEBE2BDA1C1E00177DA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EECC2BDA1C2000177DA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9852BC3F0940015ED95 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,12 +521,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E88EEBC2BDA1C1E00177DA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E88EEE92BDA231700177DA1 /* Matrix.swift in Sources */,
+				4E88EEC82BDA1C1E00177DA1 /* EisenMatrixWidgetBundle.swift in Sources */,
+				4E88EED72BDA1C8E00177DA1 /* Task.swift in Sources */,
+				4E88EEE62BDA22F700177DA1 /* TaskProtocol.swift in Sources */,
+				4E88EEE72BDA230200177DA1 /* Action.swift in Sources */,
+				4E88EECA2BDA1C1E00177DA1 /* EisenMatrixWidget.swift in Sources */,
+				4E88EEE82BDA230C00177DA1 /* Date+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ED7D9832BC3F0940015ED95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E0B3ACC2BD5DA2900E9DD70 /* TotalTaskChartView.swift in Sources */,
 				4ED7D98D2BC3F0940015ED95 /* ContentView.swift in Sources */,
-				4ED7D98B2BC3F0940015ED95 /* EisenMatrixApp.swift in Sources */,
+				4E30312A2BD4914700AE2982 /* TaskRowProtocol.swift in Sources */,
+				4E51254B2BD19BAF00579E2F /* TaskHeaderView.swift in Sources */,
+				4ECFEF832BD165B200748AEC /* TaskListView.swift in Sources */,
+				4ECFEF8B2BD16E4A00748AEC /* TaskState.swift in Sources */,
+				4E2982542BD46B6700257850 /* TaskProtocol.swift in Sources */,
+				4ECFEF752BD15FF700748AEC /* View+Extensions.swift in Sources */,
+				4ECFEF672BD135AD00748AEC /* MainTabView.swift in Sources */,
+				4E88EEE02BDA21DF00177DA1 /* EisenMatrixApp.swift in Sources */,
+				4EBFAECA2BD64556009B8B50 /* Action.swift in Sources */,
+				4E2982582BD46CDC00257850 /* NewTaskProtocol.swift in Sources */,
+				4E2EF1DE2BD2338100C94463 /* Task.swift in Sources */,
+				4E1559FE2BD6BDA300EFB6A1 /* AppDelegate.swift in Sources */,
+				4E0B3AD02BD5DB0500E9DD70 /* MonthTaskChartView.swift in Sources */,
+				4E88EEEA2BDA232800177DA1 /* EisenMatrixWidget.swift in Sources */,
+				4E7E04F52BD9495B008FE9AE /* SettingState.swift in Sources */,
+				4E29825A2BD46D6B00257850 /* NewTaskState.swift in Sources */,
+				4E51254D2BD19BCC00579E2F /* TaskWeekView.swift in Sources */,
+				4E5125542BD1A4A700579E2F /* DateIntent.swift in Sources */,
+				4E30312E2BD4922F00AE2982 /* TaskRowContainer.swift in Sources */,
+				4ECFEF8D2BD16E5B00748AEC /* TaskIntent.swift in Sources */,
+				4E29825C2BD46E2600257850 /* NewTaskContainer.swift in Sources */,
+				4E5125522BD1A49900579E2F /* DateState.swift in Sources */,
+				4E2982562BD46B8100257850 /* DateProtocol.swift in Sources */,
+				4E7E04EF2BD91D64008FE9AE /* FileManageService.swift in Sources */,
+				4ECFEF6D2BD1374A00748AEC /* SettingView.swift in Sources */,
+				4E155A002BD6BDE600EFB6A1 /* SceneDelegate.swift in Sources */,
+				4E1559FC2BD6B56A00EFB6A1 /* NotificationService.swift in Sources */,
+				4ECFEF772BD160CB00748AEC /* Date+Extensions.swift in Sources */,
+				4ECFEF722BD15CB500748AEC /* Matrix.swift in Sources */,
+				4ECFEF6B2BD1374600748AEC /* ChartView.swift in Sources */,
+				4E7E04F12BD93CCE008FE9AE /* Setting.swift in Sources */,
+				4ECFEF7D2BD1615600748AEC /* NewTaskView.swift in Sources */,
+				4ECFEF852BD165D200748AEC /* TaskRowView.swift in Sources */,
+				4E0638AB2BD8977D0095910F /* TaskProcessView.swift in Sources */,
+				4E30312C2BD491E400AE2982 /* TaskRowState.swift in Sources */,
+				4E88EEB92BD9E7A600177DA1 /* SettingContainer.swift in Sources */,
+				4ECFEF702BD13B9600748AEC /* TaskContainer.swift in Sources */,
+				4ECFEF792BD160F600748AEC /* OffsetKey.swift in Sources */,
+				4ECFEF692BD1373F00748AEC /* TaskView.swift in Sources */,
+				4E7E04F32BD9486A008FE9AE /* SettingProtocol.swift in Sources */,
+				4E0B3ACE2BD5DAAF00E9DD70 /* WeekTaskChartView.swift in Sources */,
+				4E51254F2BD1A47300579E2F /* DateContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +597,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4E88EECF2BDA1C2000177DA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E88EEBF2BDA1C1E00177DA1 /* EisenMatrixWidgetExtension */;
+			targetProxy = 4E88EECE2BDA1C2000177DA1 /* PBXContainerItemProxy */;
+		};
 		4ED7D9992BC3F0950015ED95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4ED7D9862BC3F0940015ED95 /* EisenMatrix */;
@@ -231,6 +610,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4E88EED22BDA1C2000177DA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MN45GZSDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EisenMatrixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix.EisenMatrixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E88EED32BDA1C2000177DA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrixWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MN45GZSDT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrixWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EisenMatrixWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Junwoo.Jununu.EisenMatrix.EisenMatrixWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4ED7D9A92BC3F0950015ED95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -353,20 +790,23 @@
 		4ED7D9AC2BC3F0950015ED95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrix/EisenMatrix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EisenMatrix/Preview Content\"";
 				DEVELOPMENT_TEAM = 4MN45GZSDT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,20 +827,23 @@
 		4ED7D9AD2BC3F0950015ED95 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EisenMatrix/EisenMatrix.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EisenMatrix/Preview Content\"";
 				DEVELOPMENT_TEAM = 4MN45GZSDT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EisenMatrix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +912,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E88EED12BDA1C2000177DA1 /* Build configuration list for PBXNativeTarget "EisenMatrixWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E88EED22BDA1C2000177DA1 /* Debug */,
+				4E88EED32BDA1C2000177DA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4ED7D9822BC3F0940015ED95 /* Build configuration list for PBXProject "EisenMatrix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
