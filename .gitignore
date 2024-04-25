@@ -86,8 +86,8 @@ fastlane/test_output
 iOSInjectionProject/
 
 ### Xcode ###
-# *.xcuserstate
 *.xcuserstate
+
 ## Xcode 8 and earlier
 
 ### Xcode Patch ###
