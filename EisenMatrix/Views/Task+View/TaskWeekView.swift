@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeekView: View {
+struct TaskWeekView: View {
     @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
     @Binding var week: [Date.WeekDay]
     @Namespace private var animation

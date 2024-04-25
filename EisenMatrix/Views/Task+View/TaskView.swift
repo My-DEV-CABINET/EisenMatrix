@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct TaskView: View {
     @EnvironmentObject var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject var dateContainer: DateContainer<DateIntent, DateState>
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-            HeaderView()
+            TaskHeaderView()
             TaskProcessView()
             ScrollView(.vertical) {
                 VStack {
-                    TasksView()
+                    TaskListView()
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)

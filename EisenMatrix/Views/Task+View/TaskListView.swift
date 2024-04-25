@@ -9,7 +9,7 @@ import Combine
 import SwiftData
 import SwiftUI
 
-struct TasksView: View {
+struct TaskListView: View {
     @Environment(\.modelContext) private var context
     @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>

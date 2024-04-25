@@ -62,7 +62,7 @@ struct SettingView: View {
 
             Button(action: {
                 setting.isShow.wrappedValue.toggle()
-                print("#### QWER:: \(setting.isShow.wrappedValue)")
+
             }, label: {
                 Text(setting.wrappedValue.title)
                     .font(.footnote)

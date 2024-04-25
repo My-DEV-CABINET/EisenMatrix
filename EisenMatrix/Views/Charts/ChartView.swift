@@ -14,8 +14,6 @@ struct ChartView: View {
     @EnvironmentObject private var taskContainer: TaskContainer<TaskIntent, TaskState>
     @EnvironmentObject private var dateContainer: DateContainer<DateIntent, DateState>
 
-    private let sampleDatas = Task.mockupDatas
-
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .center, spacing: 4) {

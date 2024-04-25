@@ -17,7 +17,6 @@ struct NewTaskView: View {
     
     init(action: Action, task: Task) {
         if action == Action.add {
-            print("#### \(Action.add)")
             let newTaskModel = NewTaskState()
             newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
         } else {
@@ -30,7 +29,6 @@ struct NewTaskView: View {
                 action: action
             )
             newTaskContainer = NewTaskContainer(model: newTaskModel, modelChangePublisher: newTaskModel.objectWillChange)
-            print("#### \(Action.edit)")
         }
     }
     
@@ -185,9 +183,3 @@ struct NewTaskView: View {
         }
     }
 }
-
-// #Preview {
-//    NewTaskView()
-//        .vSpacing(.bottom)
-// }
-    

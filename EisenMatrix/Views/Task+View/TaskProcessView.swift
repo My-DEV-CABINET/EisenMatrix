@@ -28,9 +28,6 @@ struct TaskProcessView: View {
                 .progressViewStyle(.linear)
         }
         .padding([.leading, .trailing, .bottom], 10)
-        .onAppear(perform: {
-            print("#### \(taskContainer.model.currentDayTasks.filter { $0.isCompleted == true }.count)")
-        })
         .onDisappear {
             print("#### TasksView Deinit")
         }

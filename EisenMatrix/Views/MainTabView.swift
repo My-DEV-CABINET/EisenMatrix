@@ -13,7 +13,7 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            HomeView()
+            TaskView()
                 .tabItem {
                     Image(systemName: "checklist")
                 }

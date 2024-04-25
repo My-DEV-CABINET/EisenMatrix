@@ -1,18 +1,9 @@
 //
-//  SettingStateProtocol.swift
+//  SettingContainer.swift
 //  EisenMatrix
 //
-//  Created by 준우의 MacBook 16 on 4/24/24.
+//  Created by 준우의 MacBook 16 on 4/25/24.
 //
-
-import Foundation
-
-protocol SettingStateProtocol {
-    var settings: [Setting] { get }
-    var fileURL: URL? { get }
-    var openFile: Bool { get }
-    var confirmAlert: Bool { get }
-}
 
 import Combine
 import SwiftData

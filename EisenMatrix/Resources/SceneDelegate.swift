@@ -18,12 +18,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {}
 
-//    func sceneWillResignActive(_ scene: UIScene) {}
-
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
-
         if #available(iOS 10.0, *) { // iOS 버전 10 이상에서 작동
             UNUserNotificationCenter.current().getNotificationSettings { settings in
 
